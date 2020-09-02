@@ -7,97 +7,253 @@
 
 <html lang="en">
 <head>
-  <title>Han Wu</title>
+  <title>Han Wu's Homepage</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="files/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <link href="files/font.css" rel='stylesheet' type='text/css'>
 </head>
-<body>
 
+<style>
+
+:root {
+    --primary-color: #001473;
+    --secondary-color: #536390;
+    --font-color: #000000;
+    --bg-color: #FEFDF9;
+    --heading-color: #292922;
+}
+
+[data-theme="dark"] {
+    --primary-color: #9cefff;
+    --secondary-color: #818cab;
+    --font-color: #f7f7ed;
+    --bg-color: #2b2b2a;
+    --heading-color: #818cab;
+}
+
+hr {
+  display: block;
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: .5px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+a {
+    color: var(--primary-color);
+}
+a:hover {
+    color: var(--primary-color);
+}
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+  em {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+}
+
+
+.theme-switch {
+  display: inline-block;
+  top: 7px;
+  height: 27px;
+  right: 70px;
+  position: absolute;
+  width: 32px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #b3b3b3;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 12px;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #f7f7ed;
+  top: 0;
+  content: "";
+  height: 15px;
+  left: 0px;
+  position: absolute;
+  transition: .4s;
+  width: 15px;
+}
+
+input:checked + .slider {
+  background-color: #9cefff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(17px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+</style>
+
+<body>
 
 <!-- Navigation -->
     <nav class="navbar navbar-inverse">
       <div class="container">
-		<ul class="nav navbar-nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#publications">Publications</a></li> 
-              <li><a href="#">CV</a></li> 
-		</ul>
-	  </div>
-	</nav>
-	
+    <ul class="nav navbar-nav">
+              <li><a href="https://woohan.github.io/">Han Wu's Homepage</a></li>
+    </ul>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+      </label>
+    </div>
+    </div>
+  </nav>
 
-  
   <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <!-- Entries Column -->
-            <div class="col-md-8" style="height: 100vh;">
-                
-                <!-- Main Image -->
-                <img class="img-responsive" src="photo.gif" alt=""><br>
-                
-                <div style="margin-top:3%; text-align:justify;">                
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing <a href="#">elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-					
-					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
-            </div> 
-
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Han Wu (吴瀚)</b></div><br>
-                <p><b>whinhust@gmail.com</b><br>
-                <p>Department of Computer Science<br>
-                Free University of Berlin<br>
-                Takustr.9, Raum 150<br>
-                14195, Berlin<br>
-                Germany<br>
+            <div class="col-md-3" >
+                <!-- Contact Info on the Sidebar and image -->
+                <div style="font-family: Arial, Helvetica, sans-serif; font-size: 32px;"><b>Han Wu (吴瀚)</b></div><br>
+                <img class="img-responsive" src="files/HanWu.jpg" height="400" width="400" alt=""><br>
+                <p>PhD student<br>
+                Department of Computer Science <br>
+                Free University of Berlin<br></p>
+                <p><b>Email:</b> whinhust [at] gmail [dot] com<br>
+                <b>Office:</b> Takustr. 9, Raum 150<br>
+                14195, Berlin, Germany
                 </p>
-            </div>
-            
-            
-            <!-- Links on the Sidebar -->
-            <div class="col-md-4" style="margin-top:2%">
-              <dd><a href="#">Google Scholar</a></dd> 
-              <dd><a href="#">Twitter</a></dd>
-              <dd><a href="#">LinkedIn</a></dd>
-            </div>
-            
-            
-            <!-- Publications -->
-            <div class="col-md-8" style="height: 100vh;">    
-                <h2 id="publications">Publications</h2>
-                
-                <strong>Peer-reviewed</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a> Names of the authors</li>
-                </ul>
-            
-                <strong>Technical Reports</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
-                </ul>
+                <dd><a href="https://woohan.github.io/files/CV_HanWu_09022020.pdf" target="_blank">CV</a></dd>
+                <dd><a href="https://github.com/woohan" target="_blank">GitHub</a></dd>
+                <dd><a href="https://scholar.google.de/citations?user=V3rj4hQAAAAJ&hl=en" target="_blank">Google Scholar</a></dd>
+                </p>
+
             </div>
 
-            
-        </div>
+            <!-- main info -->
+            <div class="col-md-8" >
+                <div style="margin-top:10vh; text-align:justify;">
+
+      <div  style="text-align:left;">
+      <div style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;"><b>Education</b></div><br>
+
+        <li> PhD - Computer Science, <b>Free University of Berlin</b>, Berlin, Germany <i>(In progress)</i> <br> </li>
+        <li> MSc - Software Engineering, <b>Tongji University</b>, Shanghai, P.R.China <br> </li>
+        <li> BSc - Civil Engineering, <b>Huazhong University of Science and Technology</b>, Wuhan, P.R.China <br> </li>
+
+      </div>
+
+      <hr>
+
+      <div  style="margin-top:3vh; text-align:left;">
+      <div style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;"><b>Research</b></div><br>
+        <p> I am currently working as a PhD student in the Dependable Distributed Systems (<a href="https://www.mi.fu-berlin.de/en/inf/groups/ag-dds/index.html" target="_blank">DDS</a>) group at Free University of Berlin, directed by <a href="https://www.mi.fu-berlin.de/en/inf/groups/ag-dds/staff/wolter.html" target="_blank">Prof. Dr. Katinka Wolter</a>. <br>
+        I am doing research on the fault tolerance strategies in real-time streaming data processing. My research interests include performance evaluation, queueing theory, stream processing and machine learning.
+      </div>
+
+      <hr>
+
+      <div  style="margin-top:3vh; text-align:left;">
+      <div align="justify", style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;"><b>Publications</b></div><br>
+        <p> <b>Han Wu</b>, Zhihao Shang, and Katinka Wolter. <b>A Reactive Batching Strategy of Apache Kafka for Reliable Stream Processing in Real-time</b>. In: <i>In 2020 IEEE International Symposium on Software Reliability Engineering (<a href="http://2020.issre.net/" target="_blank">ISSRE</a>).</i> June 2020. <br> (<i>Accepted. Acceptance rate: 25.7%</i>) <br>
+
+        <p> <b>Han Wu</b>, Zhihao Shang, and Katinka Wolter. <b>Learning to Reliably Deliver Streaming Data with Apache Kafka</b>. In: <i>2020 50th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (<a href="https://dsn2020.webs.upv.es/" target="_blank">DSN</a>).</i> June 2020. <br> (<i>Acceptance rate: 16.5%</i>)<u><a href="https://ieeexplore.ieee.org/abstract/document/9153457" target="_blank">[Link]</a></u> <br>
+
+        <p> <b>Han Wu</b>, Zhihao Shang, and Katinka Wolter. <b>Research Proposal: Reliability Evaluation of the Apache Kafka Streaming System</b>. In: <i>2019 IEEE International Symposium on Software Reliability Engineering Workshops (<a href="https://2019.issre.net/" target="_blank">ISSREW</a>).</i> October 2019. <br> <u><a href="https://ieeexplore.ieee.org/abstract/document/8990298" target="_blank">[Link]</a></u> <br>
+        
+        <p> <b>Han Wu</b>, Zhihao Shang, and Katinka Wolter. <b>TRAK: A Testing Tool for Studying the Reliability of Data Delivery in Apache Kafka</b>. In: <i>2019 IEEE International Symposium on Software Reliability Engineering Workshops (<a href="https://2019.issre.net/" target="_blank">ISSREW</a>).</i> October 2019. <br> <u><a href="https://ieeexplore.ieee.org/abstract/document/8990246" target="_blank">[Link]</a></u> <br>
+
+        <p> Zhihao Shang, <b>Han Wu</b>, Guang Peng and Katinka Wolter. <b>Dynamic load balancing in the control plane of software-defined networks</b>. In: <i>2019 IEEE 19th International Conference on Communication Technology (ICCT).</i> October 2019. <br> <u><a href="https://ieeexplore.ieee.org/abstract/document/8947243" target="_blank">[Link]</a></u> <br>
+
+        <p> <b>Han Wu</b>, Zhihao Shang, and Katinka Wolter. <b>Performance Prediction for the Apache Kafka Messaging System</b>. In: <i>2019 IEEE 21st International Conference on High Performance Computing and Communications (HPCC).</i> August 2019. <br> <u><a href="https://ieeexplore.ieee.org/abstract/document/8855525" target="_blank">[Link]</a></u> <br>
+
+        <p> Zhihao Shang, <b>Han Wu</b>, and Katinka Wolter. <b>Buffer management for reducing packet-in messages in openflow networks</b>. In: <i>2019 IEEE 11th International Conference on Communication Software and Networks (ICCSN).</i> June 2019. <br> <u><a href="https://ieeexplore.ieee.org/abstract/document/8905327" target="_blank">[Link]</a></u> <br>
+
+        <p> Zhihao Shang, <b>Han Wu</b>, and Katinka Wolter. <b>Performance Evaluation of the Control Plane in Software Defined Networks</b>. In: <i>12th EAI International Conference on Performance Evaluation Methodologies and Tools.</i> June 2019. <br> <u><a href="https://dl.acm.org/doi/abs/10.1145/3306309.3306336" target="_blank">[Link]</a></u> <br>
+
+        <p> Zhihao Shang, <b>Han Wu</b>, and Katinka Wolter. <b>An OpenFlow Controller Performance Evaluation Tool</b>. In: <i>European Workshop on Performance Engineering.</i> June 2019. <br> <u><a href="https://link.springer.com/chapter/10.1007/978-3-030-02227-3_16" target="_blank">[Link]</a></u> <br>
+      </div>
 
 
+      <hr>
+
+ <!-- Other people may like it too! -->
+     <div>
+    <p style="font-size:0.8em; float:right; color:#b5bec9;"> Thanks to <u> <a style="color:#b5bec9" target="_blank" href="https://mavroud.is/">Vasilios Mavroudis</a></u> for the <u><a style="color:#b5bec9" target="_blank" href="https://github.com/mavroudisv/plain-academic">template</a></u>!</p>
     </div>
     <!-- /.container -->
-    
-    <!-- Other people may like it too! -->
-    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
-    
+
+
+<script>
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }
+}
+
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+</script>
+
+
 </body>
 
 </html>
