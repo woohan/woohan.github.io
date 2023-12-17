@@ -17,7 +17,7 @@ News
 =====
 \[2023-03\]: *One scoping review paper is accepted by **Future Generation Computer Systems** journal.*  
 \[2023-01\]: I jointed University of Birmingham as a Research Fellow.\
-\[2022-12\]: I left Newcastle university, after working as a Research Associate for 20 months.\
+\[2022-12\]: I finished my work as a Research Associate in Newcastle University.\
 \[2023-07\]: *One paper on Federated Learning is accepted by **ISSRE 2022**.*  
 
 
