@@ -15,9 +15,9 @@ I obtained Ph.D. degree in Computer Science from **Free University of Berlin** i
 
 News
 =====
-\[2023-10\]: *One paper is accepted to **WACV 2024**.*  
-\[2023-08\]: *One paper is accepted to **BMVC 2023** Oral.*  
-\[2023-07\]: *One paper is accepted to **ICCV 2023**.*  
-\[2023-01\]: I jointed University of Birmingham as a Postdoc.
+\[2023-03\]: *One scoping review paper is accepted by **Future Generation Computer Systems** journal.*  
+\[2023-01\]: *I jointed University of Birmingham as a Research Fellow.*
+\[2022-12\]: *I left Newcastle university, after working as a Research Associate for 20 months. 
+\[2023-07\]: *One paper on Federated Learning is accepted by **ISSRE 2022**.*  
 
 
