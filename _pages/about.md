@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "Hello, this is Han"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,16 +8,21 @@ redirect_from:
   - /about.html
 ---
 
-I am a Research Fellow in the School of Computer Science at University of Birmingham. I am now working with [Prof. Aad van Moorsel](https://scholar.google.de/citations?user=FawbTj8AAAAJ&hl=en&oi=ao) on **Machine Learning Privacy**, **Federated Learning** and **Trustworthy AI**. 
+Starting in April 2024, I will serve as an Assistant Professor (Lecturer) in the School of Electronics & Computer Science at the [University of Southampton](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}. My position is anchored within the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}, where I am deeply engaged in addressing research challenges in the realm of Dependable and Secure Machine Learning Technology. 
 
-I obtained Ph.D. degree in Computer Science from **Free University of Berlin** in 2020. My Ph.D. supervisor was [Prof. Katinka Wolter](https://scholar.google.de/citations?user=JqtocLYAAAAJ&hl=en). I received my Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2013, and M.Eng degree from Tongji University in 2016.
+My research interests are broad and encompass a variety of key areas, including **Federated Learning**, **Inference Attacks**, **Differential Privacy**, **Tabular Data Synthesis**, and **Machine Unlearning**. My work aims to contribute to the advancement of secure and reliable machine learning systems that can be trusted in sensitive and critical applications.
+
+Prior to joining SOTON, I was a Research Fellow (2023-2024) in the School of Computer Science at University of Birmingham. In this role, I worked with [Prof. Aad van Moorsel](https://scholar.google.de/citations?user=FawbTj8AAAAJ&hl=en&oi=ao){:target="_blank"} on the EPSRC-funded [AGENCY](https://agencyresearch.net/){:target="_blank"} (£ 2.7M) project. I also worked as a Research Associate (2021-2023) for the EPSRC-funded [FinTrust](https://gtr.ukri.org/projects?ref=EP%2FR033595%2F1){:target="_blank"} (£ 1.0M) project at Newcastle University.
+
+I obtained PhD degree in Computer Science from the Free University of Berlin in 2020. My PhD supervisor is [Prof. Katinka Wolter](https://scholar.google.de/citations?user=JqtocLYAAAAJ&hl=en){:target="_blank"}. I received my Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2013, and Master's degree from Tongji University in 2016.
 
 
 News
 =====
-\[2023-03\]: *One scoping review paper is accepted by **Future Generation Computer Systems** journal.*  
-\[2023-01\]: I jointed University of Birmingham as a Research Fellow.\
-\[2022-12\]: I finished my work as a Research Associate in Newcastle University.\
-\[2023-07\]: *One paper on Federated Learning is accepted by **ISSRE 2022**.*  
+\[2023-11\]: *Our project UnFed: Selective Forgetting in Federated Financial Applications received **£ 20,000** grant from [EPSRC Network Plus](https://ukfin.network/){:target="_blank"}! I am the co-Investigator of this project.*\\
+\[2023-03\]: *One [scoping review paper](https://www.sciencedirect.com/science/article/pii/S0167739X23003199){:target="_blank"} about online harms in smart homes is accepted by **Future Generation Computer Systems** journal.*  
+\[2023-01\]: I jointed University of Birmingham as a Research Fellow.\\
+\[2022-12\]: I finished my work as a Research Associate in Newcastle University.\\
+\[2022-07\]: *One [paper on Federated Learning attack](https://ieeexplore.ieee.org/abstract/document/9978976){:target="_blank"} is accepted by **ISSRE 2022**.*  
 
 
