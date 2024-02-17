@@ -9,14 +9,14 @@ redirect_from:
 
 {% include base_path %}
 
-* Jan 2023 - Mar 2024, Research Fellow (Senior PostDoc) in the **University of Birmingham**
-* May 2021 - Dec 2022, Research Associate (PostDoc) in **Newcastle University**
+* Jan 2023 - Mar 2024, Research Fellow (Senior PostDoc) in the **University of Birmingham** 🇬🇧
+* May 2021 - Dec 2022, Research Associate (PostDoc) in **Newcastle University** 🇬🇧
 
 Education
 ======
-* 2009 - 2013, B.Eng.,  Civil Engineering, **Huazhong University of Science and Technology**
-* 2013 - 2016, M.Eng., Software Engineering, **Tongji University**
-* 2016 - 2020, PhD., Computer Science, **Free University of Berlin**
+* 2016 - 2020, PhD., Computer Science, **Free University of Berlin** 🇩🇪
+* 2013 - 2016, M.Eng., Software Engineering, **Tongji University** 🇨🇳
+* 2009 - 2013, B.Eng.,  Civil Engineering, **Huazhong University of Science and Technology** 🇨🇳
 
 Professional Activities
 ======
