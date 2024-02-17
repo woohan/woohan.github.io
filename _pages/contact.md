@@ -5,14 +5,13 @@ permalink: /contact/
 author_profile: true
 ---
 
-Dr Yihua Cheng (程义华)
+Dr Han Wu (吴瀚)
 
-Intelligent Robotics Lab.  
-Room 106  
+Room 115
 School of Computer Science  
 University of Birmingham  
 Birmingham, B15 2TT  
 United Kingdom  
 
-**E-mail:** y.cheng.2@bham.ac.uk
+**E-mail:** h(dot)wu(at)soton.ac.uk
 
