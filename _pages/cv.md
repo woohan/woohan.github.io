@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
+* April 2024 - Present, Assistant Professor (Lecturer) in the **University of Southampton** 🇬🇧
 * Jan 2023 - Mar 2024, Research Fellow (Senior PostDoc) in the **University of Birmingham** 🇬🇧
 * May 2021 - Dec 2022, Research Associate (PostDoc) in **Newcastle University** 🇬🇧
 
