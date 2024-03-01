@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Homepage"
+title                    : "Han's Bonfire"
 title_separator          : "-"
 name                     : &name "Han Wu"
 description              : &description "personal description"
