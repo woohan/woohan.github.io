@@ -8,9 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-Starting in April 2024, I will serve as an **Assistant Professor** ([Lecturer](https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu){:target="_blank"}) in the School of Electronics & Computer Science ([ECS](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}) at the University of Southampton. My position is anchored within the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}, where I am deeply engaged in addressing research challenges in the realm of Dependable and Secure Machine Learning Technology.
+From April 2024, I am an **Assistant Professor** ([Lecturer](https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu){:target="_blank"}) in the School of Electronics & Computer Science ([ECS](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}) at the University of Southampton. My position is anchored within the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}, where I am deeply engaged in addressing research challenges in the realm of Dependable and Secure Machine Learning Technology.
 
-📣📣📣 🎓 **<span style="color:tomato">PhD Opportunities</span> at [ECS, University of Southampton](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}** 🇬🇧🎓 Prospective students who are interested in privacy-preserving machine learning and cyber security, please contact me via [email]({{ site.baseurl }}{% link _pages/contact.md %}). For research topics, please refer to [this]({{ site.baseurl }}{% link _pages/research.md %}) brief introduction or [the post](https://www.jobs.ac.uk/job/DGZ993/phd-studentship-privacy-attacks-and-defences-in-federated-learning-systems){:target="_blank"}.
+📣📣📣 🎓 **<span style="color:tomato">PhD Opportunities</span> at [ECS, University of Southampton](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}** 🇬🇧🎓 Prospective students who are interested in privacy-preserving machine learning and cyber security, please contact me via [email]({{ site.baseurl }}{% link _pages/contact.md %}). For research topics, please refer to [this]({{ site.baseurl }}{% link _pages/research.md %}) brief introduction or [the post](https://www.jobs.ac.uk/job/DGZ993/phd-studentship-privacy-attacks-and-defences-in-federated-learning-systems){:target="_blank"}. Visiting students are also welcome.
 
 My research interests are broad and encompass a variety of key areas, including **Federated Learning**, **Inference Attacks**, **Differential Privacy**, **Tabular Data Synthesis**, and **Machine Unlearning**. My work aims to contribute to the advancement of secure and reliable machine learning systems that can be trusted in sensitive and critical applications.
 
@@ -21,6 +21,10 @@ I obtained PhD degree in Computer Science from the Free University of Berlin in 
 
 News
 =====
+\[2024-08\]: *Our [paper](https://www.researchgate.net/publication/377230758_The_Face_of_Deception_The_Impact_of_AI-Generated_Photos_on_Malicious_Social_Bots) about GAN-based social media bots is accepted by **IEEE Transactions on Computational Social Systems** journal*.\\
+\[2024-08\]: I organised the PrivacyML@ECS seminar at the University of Southampton.\\
+\[2024-05\]: I received the ECS Pump Priming Fund in the amount of **£ 1,730**.\\
+\[2024-04\]: I joined the University of Southampton as a lecturer in Cyber Security.\\
 \[2023-11\]: *Our project UnFed: Selective Forgetting in Federated Financial Applications received **£ 20,000** grant from [EPSRC Network Plus](https://ukfin.network/){:target="_blank"}! I am the co-Investigator of this project.*\\
 \[2023-03\]: *One [scoping review paper](https://www.sciencedirect.com/science/article/pii/S0167739X23003199){:target="_blank"} about online harms in smart homes is accepted by **Future Generation Computer Systems** journal.*  
 \[2023-01\]: I jointed University of Birmingham as a Research Fellow.\\
