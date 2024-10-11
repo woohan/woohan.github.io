@@ -5,12 +5,13 @@ permalink: /contact/
 author_profile: true
 ---
 
-Dr Han Wu (吴瀚)
+Dr Han Wu
 
-Room 115\\
-School of Computer Science  
-University of Birmingham  
-Birmingham, B15 2TT  
+Room 3225\\
+Building 59\\
+School of Electronics and Computer Science  
+University of Southampton  
+Southampton, SO17 1BJ 
 United Kingdom  
 
 **E-mail:** h(dot)wu(at)soton.ac.uk
