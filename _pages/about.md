@@ -21,6 +21,7 @@ I obtained PhD degree in Computer Science from the Free University of Berlin in 
 
 News
 =====
+\[2024-12\]: 🔥*Our [paper](https://arxiv.org/pdf/2406.18145) about personalisation in Shuffle Differential Privacy is accepted by **USENIX Security 2025**. Congrats to all authors!*.\\
 \[2024-08\]: *Our [paper](https://ieeexplore.ieee.org/document/10712168) about GAN-based social media bots is accepted by **IEEE Transactions on Computational Social Systems** journal*.\\
 \[2024-08\]: I organised the PrivacyML@ECS seminar at the University of Southampton.\\
 \[2024-05\]: I received the ECS Pump Priming Fund in the amount of **£ 1,730**.\\
