@@ -8,11 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-From April 2024, I am an **Assistant Professor** ([Lecturer](https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu){:target="_blank"}) in the School of Electronics & Computer Science ([ECS](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}) at the University of Southampton. My position is anchored within the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}, where I am deeply engaged in addressing research challenges in the realm of Dependable and Secure Machine Learning Technology.
+From April 2024, I am an **Assistant Professor** ([Lecturer](https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu){:target="_blank"}) in the School of Electronics & Computer Science ([ECS](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}) at the University of Southampton. I am part of the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}, focusing on **Dependable and Secure Machine Learning Technology**. My research spans Federated Learning, Inference Attacks, Differential Privacy, Tabular Data Synthesis, and Machine Unlearning, aiming to advance secure and reliable machine learning systems for sensitive applications.
 
 📣📣📣 🎓 **<span style="color:tomato">PhD Opportunities</span> at [ECS, University of Southampton](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}** 🇬🇧🎓 Prospective students who are interested in privacy-preserving machine learning and cyber security, please contact me via [email]({{ site.baseurl }}{% link _pages/contact.md %}). For research topics, please refer to [this]({{ site.baseurl }}{% link _pages/research.md %}) brief introduction or [the post](https://www.jobs.ac.uk/job/DJX190/phd-studentship-privacy-security-risks-in-machine-federated-learning-systems){:target="_blank"}. Visiting students are also welcome to apply.
-
-My research interests are broad and encompass a variety of key areas, including **Federated Learning**, **Inference Attacks**, **Differential Privacy**, **Tabular Data Synthesis**, and **Machine Unlearning**. My work aims to contribute to the advancement of secure and reliable machine learning systems that can be trusted in sensitive and critical applications.
 
 Prior to joining SOTON, I was a Research Fellow (2023-2024) in the School of Computer Science at University of Birmingham. In this role, I worked with [Prof. Aad van Moorsel](https://scholar.google.de/citations?user=FawbTj8AAAAJ&hl=en&oi=ao){:target="_blank"} on the EPSRC-funded [AGENCY](https://agencyresearch.net/){:target="_blank"} (£ 2.7M) project. I also worked as a Research Associate (2021-2023) for the EPSRC-funded [FinTrust](https://gtr.ukri.org/projects?ref=EP%2FR033595%2F1){:target="_blank"} (£ 1.0M) project at Newcastle University. I am the awardee of the [Post-Doctoral Enrichment Award 2022](https://www.turing.ac.uk/post-doctoral-enrichment-awards-pdea){:target="_blank"} granted by the Alan Turing Institute.
 
@@ -21,8 +19,12 @@ I obtained PhD degree in Computer Science from the Free University of Berlin in 
 
 News
 =====
-\[2024-12\]: 🔥*Our [paper](https://arxiv.org/pdf/2406.18145) about personalisation in Shuffle Differential Privacy is accepted by **USENIX Security 2025**. Congrats to all authors!*.\\
-\[2024-08\]: *Our [paper](https://ieeexplore.ieee.org/document/10712168) about GAN-based social media bots is accepted by **IEEE Transactions on Computational Social Systems** journal*.\\
+\[2025-03\]: 🔥Our [paper](https://arxiv.org/pdf/2302.01706){:target="_blank"} on Vertical Federated Learning is accepted by **DSN 2025**. Congrats!\\
+\[2025-03\]: One [paper](https://doi.org/10.1109/TCSI.2025.3550386){:target="_blank"} is accepted by **IEEE Transactions on Circuits and Systems I: Regular Papers**.\\
+\[2025-02\]: I was invited to Heriot-Watt University to give a talk on *"Together We Learn, Individually We Protect: A Vision For Differential Privacy"*. Thanks to Prof [Wei Pang](https://pangwei.eu.org/){:target="_blank"} for the invitation!\\
+\[2025-01\]: My PhD student [Shuyan Zou](https://www.linkedin.com/in/shuyanrocky/?originalSubdomain=uk){:target="_blank"} has started, working on privacy-preserving machine learning.\\
+\[2024-12\]: 🔥Our [paper](https://arxiv.org/pdf/2406.18145){:target="_blank"} about personalisation in Shuffle Differential Privacy is accepted by **USENIX Security 2025**. Congrats to all authors!.\\
+\[2024-08\]: Our [paper](https://ieeexplore.ieee.org/document/10712168){:target="_blank"} about GAN-based social media bots is accepted by **IEEE Transactions on Computational Social Systems** journal.\\
 \[2024-08\]: I organised the PrivacyML@ECS seminar at the University of Southampton.\\
 \[2024-05\]: I received the ECS Pump Priming Fund in the amount of **£ 1,730**.\\
 \[2024-04\]: I joined the University of Southampton as a lecturer in Cyber Security.\\
