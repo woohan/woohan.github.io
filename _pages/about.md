@@ -19,11 +19,15 @@ I obtained PhD degree in Computer Science from the Free University of Berlin in 
 
 News
 =====
+\[2025-11\]: 🎉 Our [paper](https://openreview.net/forum?id=ksau9IVXPj){:target="_blank"} *"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"* was accepted to the [RSD Workshop @ AAAI 2026](https://responsible-synthetic-data.github.io/){:target="_blank"}. Congrats to Adethya Srinivasan - such an achievement for a 2nd year BSc student!\\
+\[2025-09\]: My second PhD student Jiawei Wang has started, working on machine unlearning.\\
+\[2025-09\]: I was invited to Durham University for the [**RISCS Cybersecurity event**](https://www.riscs.org.uk/){:target="_blank"}, where I gave a talk on *Auditing Privacy-preserving AI*. Thanks to Dr Rebecca Owens and Dr Partha Das Chowdhury for the invitation!\\
+\[2025-05\]: I supported BSc Year 2 student *Adethya Srinivasan* in securing the **Aniket Singh Scholarship** to work on a 12-week research project in **Vertical Federated Learning**.\\
 \[2025-03\]: 🔥Our [paper](https://arxiv.org/pdf/2302.01706){:target="_blank"} on Vertical Federated Learning is accepted by **DSN 2025**. Congrats!\\
 \[2025-03\]: One [paper](https://doi.org/10.1109/TCSI.2025.3550386){:target="_blank"} is accepted by **IEEE Transactions on Circuits and Systems I: Regular Papers**.\\
 \[2025-02\]: I was invited to Heriot-Watt University to give a talk on *"Together We Learn, Individually We Protect: A Vision For Differential Privacy"*. Thanks to Prof [Wei Pang](https://pangwei.eu.org/){:target="_blank"} for the invitation!\\
 \[2025-01\]: My PhD student [Shuyan Zou](https://www.linkedin.com/in/shuyanrocky/?originalSubdomain=uk){:target="_blank"} has started, working on privacy-preserving machine learning.\\
-\[2024-12\]: 🔥Our [paper](https://arxiv.org/pdf/2406.18145){:target="_blank"} about personalisation in Shuffle Differential Privacy is accepted by **USENIX Security 2025**. Congrats to all authors!.\\
+\[2024-12\]: 🔥Our [paper](https://arxiv.org/pdf/2406.18145){:target="_blank"} about personalisation in Shuffle Differential Privacy is accepted by **USENIX Security 2025**, with <a href="https://www.usenix.org/sites/default/files/sec25_honorable_mentions.pdf" target="_blank" style="color:red"><strong>Honorable-Mention Award</strong></a>. Congrats to all authors!.\\
 \[2024-08\]: Our [paper](https://ieeexplore.ieee.org/document/10712168){:target="_blank"} about GAN-based social media bots is accepted by **IEEE Transactions on Computational Social Systems** journal.\\
 \[2024-08\]: I organised the PrivacyML@ECS seminar at the University of Southampton.\\
 \[2024-05\]: I received the ECS Pump Priming Fund in the amount of **£ 1,730**.\\
