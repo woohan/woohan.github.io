@@ -19,23 +19,90 @@ I obtained PhD degree in Computer Science from the Free University of Berlin in 
 
 News
 =====
-\[2025-11\]: 🎉 Our [paper](https://openreview.net/forum?id=ksau9IVXPj){:target="_blank"} *"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"* was accepted to the [RSD Workshop @ AAAI 2026](https://responsible-synthetic-data.github.io/){:target="_blank"}. Congrats to Adethya Srinivasan - such an achievement for a 2nd year BSc student!\\
-\[2025-09\]: My second PhD student Jiawei Wang has started, working on machine unlearning.\\
-\[2025-09\]: I was invited to Durham University for the [**RISCS Cybersecurity event**](https://www.riscs.org.uk/){:target="_blank"}, where I gave a talk on *Auditing Privacy-preserving AI*. Thanks to Dr Rebecca Owens and Dr Partha Das Chowdhury for the invitation!\\
-\[2025-05\]: I supported BSc Year 2 student *Adethya Srinivasan* in securing the **Aniket Singh Scholarship** to work on a 12-week research project in **Vertical Federated Learning**.\\
-\[2025-03\]: 🔥Our [paper](https://arxiv.org/pdf/2302.01706){:target="_blank"} on Vertical Federated Learning is accepted by **DSN 2025**. Congrats!\\
-\[2025-03\]: One [paper](https://doi.org/10.1109/TCSI.2025.3550386){:target="_blank"} is accepted by **IEEE Transactions on Circuits and Systems I: Regular Papers**.\\
-\[2025-02\]: I was invited to Heriot-Watt University to give a talk on *"Together We Learn, Individually We Protect: A Vision For Differential Privacy"*. Thanks to Prof [Wei Pang](https://pangwei.eu.org/){:target="_blank"} for the invitation!\\
-\[2025-01\]: My PhD student [Shuyan Zou](https://www.linkedin.com/in/shuyanrocky/?originalSubdomain=uk){:target="_blank"} has started, working on privacy-preserving machine learning.\\
-\[2024-12\]: 🔥Our [paper](https://arxiv.org/pdf/2406.18145){:target="_blank"} about personalisation in Shuffle Differential Privacy is accepted by **USENIX Security 2025**, with <a href="https://www.usenix.org/sites/default/files/sec25_honorable_mentions.pdf" target="_blank" style="color:red"><strong>Honorable-Mention Award</strong></a>. Congrats to all authors!.\\
-\[2024-08\]: Our [paper](https://ieeexplore.ieee.org/document/10712168){:target="_blank"} about GAN-based social media bots is accepted by **IEEE Transactions on Computational Social Systems** journal.\\
-\[2024-08\]: I organised the PrivacyML@ECS seminar at the University of Southampton.\\
-\[2024-05\]: I received the ECS Pump Priming Fund in the amount of **£ 1,730**.\\
-\[2024-04\]: I joined the University of Southampton as a lecturer in Cyber Security.\\
-\[2023-11\]: *Our project UnFed: Selective Forgetting in Federated Financial Applications received **£ 20,000** grant from [EPSRC Network Plus](https://ukfin.network/){:target="_blank"}! I am the co-Investigator of this project.*\\
-\[2023-03\]: *One [scoping review paper](https://www.sciencedirect.com/science/article/pii/S0167739X23003199){:target="_blank"} about online harms in smart homes is accepted by **Future Generation Computer Systems** journal.*  
-\[2023-01\]: I jointed University of Birmingham as a Research Fellow.\\
-\[2022-12\]: I finished my work as a Research Associate in Newcastle University.\\
-\[2022-07\]: *One [paper on Federated Learning attack](https://ieeexplore.ieee.org/abstract/document/9978976){:target="_blank"} is accepted by **ISSRE 2022**.*  
 
-
+<section class="news-list">
+  <article class="news-card">
+    <time class="news-date">2026-04</time>
+    <p>🎉 My PhD student Shuyan Zou's paper <em>"SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"</em> was accepted to <strong>ICML 2026</strong> as a <strong>Spotlight (top 2.2%)</strong> paper! Congratulations to Shuyan and all co-authors!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2026-04</time>
+    <p>🎉 Our paper <em><a href="https://doi.org/10.1109/TR.2026.3687124" target="_blank">"An Adaptive Mini-Batching Strategy for Reliable Streaming Data Delivery in Real-Time"</a></em> was accepted to <strong>IEEE Transactions on Reliability</strong>. Congrats to all co-authors!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2026-03</time>
+    <p>🎉 My PhD student Jiawei Wang's paper <em><a href="https://doi.org/10.1145/3805621.3807630" target="_blank">"Peeling the Layers of Privacy-Utility Onion on Tabular Data"</a></em> was accepted to the <a href="https://euromlsys.eu/#schedule" target="_blank"><strong>EuroMLSys Workshop</strong></a>, co-located with <strong>EuroSys 2026</strong>. Congratulations to Jiawei and all co-authors!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-11</time>
+    <p>🎉 Our <a href="https://openreview.net/forum?id=ksau9IVXPj" target="_blank">paper</a> <em>"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"</em> was accepted to the <a href="https://responsible-synthetic-data.github.io/" target="_blank">RSD Workshop @ AAAI 2026</a>. Congrats to Adethya Srinivasan - such an achievement for a 2nd year BSc student!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-09</time>
+    <p>My second PhD student Jiawei Wang has started, working on machine unlearning.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-09</time>
+    <p>I was invited to Durham University for the <a href="https://www.riscs.org.uk/" target="_blank"><strong>RISCS Cybersecurity event</strong></a>, where I gave a talk on <em>Auditing Privacy-preserving AI</em>. Thanks to Dr Rebecca Owens and Dr Partha Das Chowdhury for the invitation!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-05</time>
+    <p>I supported BSc Year 2 student <em>Adethya Srinivasan</em> in securing the <strong>Aniket Singh Scholarship</strong> to work on a 12-week research project in <strong>Vertical Federated Learning</strong>.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-03</time>
+    <p>🔥 Our <a href="https://arxiv.org/pdf/2302.01706" target="_blank">paper</a> on Vertical Federated Learning is accepted by <strong>DSN 2025</strong>. Congrats!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-03</time>
+    <p>One <a href="https://doi.org/10.1109/TCSI.2025.3550386" target="_blank">paper</a> is accepted by <strong>IEEE Transactions on Circuits and Systems I: Regular Papers</strong>.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-02</time>
+    <p>I was invited to Heriot-Watt University to give a talk on <em>"Together We Learn, Individually We Protect: A Vision For Differential Privacy"</em>. Thanks to Prof <a href="https://pangwei.eu.org/" target="_blank">Wei Pang</a> for the invitation!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2025-01</time>
+    <p>My PhD student <a href="https://www.linkedin.com/in/shuyanrocky/?originalSubdomain=uk" target="_blank">Shuyan Zou</a> has started, working on privacy-preserving machine learning.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2024-12</time>
+    <p>🔥 Our <a href="https://arxiv.org/pdf/2406.18145" target="_blank">paper</a> about personalisation in Shuffle Differential Privacy is accepted by <strong>USENIX Security 2025</strong>, with <a href="https://www.usenix.org/sites/default/files/sec25_honorable_mentions.pdf" target="_blank"><strong>Honorable-Mention Award</strong></a>. Congrats to all authors!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2024-08</time>
+    <p>Our <a href="https://ieeexplore.ieee.org/document/10712168" target="_blank">paper</a> about GAN-based social media bots is accepted by <strong>IEEE Transactions on Computational Social Systems</strong> journal.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2024-08</time>
+    <p>I organised the PrivacyML@ECS seminar at the University of Southampton.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2024-05</time>
+    <p>I received the ECS Pump Priming Fund in the amount of <strong>£ 1,730</strong>.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2024-04</time>
+    <p>I joined the University of Southampton as a lecturer in Cyber Security.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2023-11</time>
+    <p><em>Our project UnFed: Selective Forgetting in Federated Financial Applications received <strong>£ 20,000</strong> grant from <a href="https://ukfin.network/" target="_blank">EPSRC Network Plus</a>! I am the co-Investigator of this project.</em></p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2023-03</time>
+    <p><em>One <a href="https://www.sciencedirect.com/science/article/pii/S0167739X23003199" target="_blank">scoping review paper</a> about online harms in smart homes is accepted by <strong>Future Generation Computer Systems</strong> journal.</em></p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2023-01</time>
+    <p>I jointed University of Birmingham as a Research Fellow.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2022-12</time>
+    <p>I finished my work as a Research Associate in Newcastle University.</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2022-07</time>
+    <p><em>One <a href="https://ieeexplore.ieee.org/abstract/document/9978976" target="_blank">paper on Federated Learning attack</a> is accepted by <strong>ISSRE 2022</strong>.</em></p>
+  </article>
+</section>
