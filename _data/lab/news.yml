@@ -1,0 +1,119 @@
+- date: "2026-04"
+  month: "Apr"
+  title: "SlaClip accepted to ICML 2026 as a Spotlight paper"
+  home_title: "One paper accepted to ICML 2026 as Spotlight (top 2.2%)!"
+  summary: "Shuyan Zou's work on adaptive clipping in differentially private stochastic gradient descent was selected as an ICML 2026 Spotlight paper (top 2.2%)."
+  body_html: >-
+    🎉 Our PhD student Shuyan Zou's paper <a href="/lab/publication/"><em>"SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"</em></a> was accepted to <strong>ICML 2026</strong> as a <strong>Spotlight (top 2.2%)</strong> paper. Congratulations to Shuyan and all co-authors!
+  venue_short: "ICML"
+  image: "/assets/lab/news/ICML_logo_2026.svg.webp"
+  url: "/lab/publication/"
+
+- date: "2026-04"
+  month: "Apr"
+  title: "Adaptive mini-batching research accepted by IEEE Transactions on Reliability"
+  home_title: "One paper accepted by IEEE Transactions on Reliability."
+  summary: "Our work on reliable streaming data delivery in real time has been accepted for publication."
+  body_html: >-
+    🎉 Our paper <a href="https://doi.org/10.1109/TR.2026.3687124"><em>"An Adaptive Mini-Batching Strategy for Reliable Streaming Data Delivery in Real-Time"</em></a> was accepted to <strong>IEEE Transactions on Reliability</strong>. Congrats to all co-authors!
+  venue_short: "IEEE TR"
+  image: "/assets/lab/news/IEEE-RS-Logo-Colour-Positive-RGB.webp"
+  url: "https://doi.org/10.1109/TR.2026.3687124"
+
+- date: "2026-03"
+  month: "Mar"
+  title: "Privacy–utility research accepted at EuroMLSys 2026"
+  home_title: "One paper accepted at EuroMLSys 2026."
+  summary: "Jiawei Wang's work on understanding privacy and utility for tabular data was accepted at the EuroMLSys Workshop, co-located with EuroSys 2026."
+  body_html: >-
+    🎉 Our PhD student Jiawei Wang's paper <a href="https://doi.org/10.1145/3805621.3807630"><em>"Peeling the Layers of Privacy-Utility Onion on Tabular Data"</em></a> was accepted to the <a href="https://euromlsys.eu/#schedule"><strong>EuroMLSys Workshop</strong></a>, co-located with <strong>EuroSys 2026</strong>. Congratulations to Jiawei and all co-authors!
+  venue_short: "EuroMLSys"
+  image: "/assets/lab/news/euromlsys-white.png"
+  url: "https://doi.org/10.1145/3805621.3807630"
+
+- date: "2026-01"
+  month: "Jan"
+  title: "Welcome to Hengyang Yao"
+  home_title: "Welcome to Hengyang Yao."
+  summary: "Hengyang, from University of Birmingham, joined CyberPUNK lab as a PhD student and is studying machine unlearning. Welcome!"
+  body_html: >-
+    <a href="/lab/team/">Hengyang Yao</a>, from University of Birmingham, joined CyberPUNK lab as a PhD student. Welcome!
+  venue_short: "Team"
+  image: "/assets/lab/news/TEAM_soton.png"
+  image_fit: "cover"
+  url: "/lab/team/"
+
+- date: "2025-11"
+  month: "Nov"
+  title: "FedEvolve accepted at the RSD Workshop @ AAAI 2026"
+  home_title: "One paper accepted at the RSD Workshop @ AAAI 2026."
+  summary: "Our research on evolutionary tabular data synthesis in vertical federated learning systems was accepted at the Responsible Synthetic Data workshop."
+  body_html: >-
+    🎉 Our paper <a href="https://openreview.net/forum?id=ksau9IVXPj"><em>"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"</em></a> was accepted to the <a href="https://responsible-synthetic-data.github.io/"><strong>RSD Workshop @ AAAI 2026</strong></a>. Congrats to Adethya Srinivasan — such an achievement for a second-year BSc student!
+  venue_short: "RSD"
+  image: "/assets/lab/news/RSD@AAAI.png"
+  url: "https://openreview.net/forum?id=ksau9IVXPj"
+
+- date: "2025-09"
+  month: "Sep"
+  title: "Welcome to Jiawei Wang"
+  home_title: "Welcome to Jiawei Wang."
+  summary: "Jiawei, from Sichuan University, joined CyberPUNK lab as a PhD student and is studying machine unlearning. Welcome!"
+  body_html: >-
+    <a href="/lab/team/">Jiawei Wang</a>, from Sichuan University, joined CyberPUNK lab as a PhD student and is studying machine unlearning. Welcome!
+  venue_short: "Team"
+  image: "/assets/lab/news/TEAM_soton.png"
+  image_fit: "cover"
+  url: "/lab/team/"
+
+- date: "2025-09"
+  month: "Sep"
+  title: "Invited talk at the RISCS Cybersecurity event"
+  summary: "Han Wu presented an invited talk on auditing privacy-preserving AI at Durham University."
+  body_html: >-
+    Our lab was invited to Durham University for the <a href="https://www.riscs.org.uk/"><strong>RISCS Cybersecurity event</strong></a>, where Han Wu gave a talk on <em>Auditing Privacy-preserving AI</em>.
+  venue_short: "Talk"
+  image: "/assets/lab/news/RISCS_talk.png"
+  image_fit: "cover"
+  url: "https://www.riscs.org.uk/"
+
+- date: "2025-05"
+  month: "May"
+  title: "Aniket Singh Scholarship awarded"
+  summary: "Adethya Srinivasan secured support for a 12-week undergraduate project in vertical federated learning."
+  body_html: >-
+    Our lab supported BSc Year 2 student <em>Adethya Srinivasan</em> in securing the <strong>Aniket Singh Scholarship</strong> (funded by University of Southampton) to work on a 12-week research project in <strong>Vertical Federated Learning</strong>.
+  venue_short: "Award"
+  image: "/assets/lab/news/TEAM_ECS.png"
+  image_fit: "cover"
+  url: "/lab/news/"
+
+- date: "2025-03"
+  month: "Mar"
+  title: "Vertical federated learning research accepted at DSN 2025"
+  summary: "Our work on generating tabular data through vertical federated learning was accepted at DSN 2025."
+  body_html: >-
+    🔥 Our paper <a href="https://arxiv.org/pdf/2302.01706"><em>"GTV: Generating Tabular Data via Vertical Federated Learning"</em></a> was accepted by <strong>DSN 2025</strong>. Congrats!
+  venue_short: "DSN"
+  image: "/assets/lab/news/DSN25_logo.png"
+  url: "https://arxiv.org/pdf/2302.01706"
+
+- date: "2025-03"
+  month: "Mar"
+  title: "One paper accepted by IEEE Transactions on Circuits and Systems I"
+  summary: "One paper was accepted by IEEE Transactions on Circuits and Systems I: Regular Papers."
+  body_html: >-
+    Our paper <a href="https://doi.org/10.1109/TCSI.2025.3550386"><em>"Impacts of Physical-Layer Information on Epidemic Spreading in Cyber-Physical Networked Systems"</em></a> was accepted by <strong>IEEE Transactions on Circuits and Systems I: Regular Papers</strong>.
+  venue_short: "IEEE TCSI"
+  image: "/assets/lab/news/ieee_transactions_on_circuits_and_systems_i_logo.jpeg"
+  url: "https://doi.org/10.1109/TCSI.2025.3550386"
+
+- date: "2025-02"
+  month: "Feb"
+  title: "Invited talk at Heriot-Watt University"
+  summary: "Han Wu gave an invited talk on differential privacy at Heriot-Watt University."
+  body_html: >-
+    Han Wu was invited to Heriot-Watt University to give a talk on <em>"Together We Learn, Individually We Protect: A Vision For Differential Privacy"</em>.
+  venue_short: "Talk"
+  image: "/assets/lab/news/heriot-watt_university12.avif"
+  url: "https://pangwei.eu.org/"

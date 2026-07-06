@@ -1,0 +1,96 @@
+---
+layout: lab
+title: Home
+permalink: /lab/
+lab_page: home
+description: "CyberPUNK Lab studies cybersecurity, privacy, and unknown risks in modern AI systems."
+---
+
+<div class="lab-home-stage" style="--lab-home-bg: url('{{ '/assets/lab/homepage-background-title.png' | relative_url }}')">
+  <div class="lab-home-backdrop" aria-hidden="true"></div>
+  <section class="lab-hero" role="img" aria-label="CyberPUNK Lab across a neon city skyline">
+    <span class="lab-hero__sr-title">CyberPUNK Lab: Cybersecurity, Privacy, and UNKnown risks</span>
+  </section>
+
+  <section class="lab-home-panels" aria-label="Latest lab information">
+    <div class="lab-home-grid">
+    <article class="lab-screen lab-screen--news">
+      <header class="lab-screen__header">
+        <h2><img src="{{ '/assets/lab/icons/news.svg' | relative_url }}" alt=""><span class="lab-screen__title">News</span></h2>
+      </header>
+      <div class="lab-screen__body">
+        {% for item in site.data.lab.news limit: 5 %}
+          {% assign news_title = item.home_title | default: item.title %}
+          <a class="lab-home-news" href="{{ item.url | relative_url }}">
+            <time datetime="{{ item.date }}">{{ item.date }}</time>
+            <span><strong>{% if news_title contains "accepted" or news_title contains "Accepted" %}🎉 {% endif %}{{ news_title }}</strong></span>
+            <b aria-hidden="true">↗</b>
+          </a>
+        {% endfor %}
+      </div>
+      <footer class="lab-screen__footer">
+        <a href="{{ '/lab/news/' | relative_url }}">More <span aria-hidden="true">→</span></a>
+      </footer>
+    </article>
+
+    <article class="lab-screen lab-screen--publications">
+      <header class="lab-screen__header">
+        <h2><img src="{{ '/assets/lab/icons/publication.svg' | relative_url }}" alt=""><span class="lab-screen__title">Publications</span></h2>
+      </header>
+      <div class="lab-screen__body">
+        {% for item in site.data.lab.publications limit: 5 %}
+          <div class="lab-home-publication">
+            <time>{{ item.date }}</time>
+            <span>
+              <strong>{{ item.title }}</strong>
+              <span class="lab-home-tags">
+                {% for tag in item.tags %}
+                  <small class="lab-home-tag{% if tag contains "Honorable" or tag contains "Award" or tag contains "Spotlight" %} lab-home-tag--note{% endif %}">{{ tag }}</small>
+                {% endfor %}
+              </span>
+            </span>
+            <a href="{{ '/lab/publication/' | relative_url }}">Details</a>
+          </div>
+        {% endfor %}
+      </div>
+      <footer class="lab-screen__footer">
+        <a href="{{ '/lab/publication/' | relative_url }}">More <span aria-hidden="true">→</span></a>
+      </footer>
+    </article>
+
+    <div class="lab-home-grid__side">
+      <article class="lab-screen lab-screen--team">
+        <header class="lab-screen__header">
+          <h2><img src="{{ '/assets/lab/icons/team.svg' | relative_url }}" alt=""><span class="lab-screen__title">Team</span></h2>
+        </header>
+        <div class="lab-screen__body lab-name-list">
+          <a href="{{ '/lab/team/' | relative_url }}">{{ site.data.lab.team.lead.name }} <small>Lead</small></a>
+          {% for person in site.data.lab.team.phd_students %}
+            <a href="{{ '/lab/team/' | relative_url }}">{{ person.name }}</a>
+          {% endfor %}
+        </div>
+        <footer class="lab-screen__footer">
+          <a href="{{ '/lab/team/' | relative_url }}">More <span aria-hidden="true">→</span></a>
+        </footer>
+      </article>
+
+      <article class="lab-screen lab-screen--opportunities">
+        <header class="lab-screen__header">
+          <h2><img src="{{ '/assets/lab/icons/opportunities.svg' | relative_url }}" alt=""><span class="lab-screen__title">Opportunities</span></h2>
+        </header>
+        <div class="lab-screen__body">
+          {% for item in site.data.lab.opportunities limit: 1 %}
+            <a class="lab-home-opening" href="{{ item.url | relative_url }}">
+              <span><strong>{{ item.title }}</strong><small>{{ item.status }} · {{ item.deadline }}</small></span>
+              <b aria-hidden="true">→</b>
+            </a>
+          {% endfor %}
+        </div>
+        <footer class="lab-screen__footer">
+          <a href="{{ '/lab/opportunities/' | relative_url }}">More <span aria-hidden="true">→</span></a>
+        </footer>
+      </article>
+    </div>
+    </div>
+  </section>
+</div>

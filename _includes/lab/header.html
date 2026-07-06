@@ -1,0 +1,27 @@
+<header class="lab-header">
+  <div class="lab-header__inner">
+    <a class="lab-wordmark" href="{{ '/lab/' | relative_url }}" aria-label="CyberPUNK Lab home">
+      Cyber<span>PUNK</span> Lab
+    </a>
+    <nav class="lab-nav" aria-label="Lab navigation">
+      <a {% if page.lab_page == 'home' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/' | relative_url }}">
+        <img src="{{ '/assets/lab/icons/home.svg' | relative_url }}" alt=""><span class="lab-nav__label">Home</span>
+      </a>
+      <a {% if page.lab_page == 'news' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/news/' | relative_url }}">
+        <img src="{{ '/assets/lab/icons/news.svg' | relative_url }}" alt=""><span class="lab-nav__label">News</span>
+      </a>
+      <a {% if page.lab_page == 'team' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/team/' | relative_url }}">
+        <img src="{{ '/assets/lab/icons/team.svg' | relative_url }}" alt=""><span class="lab-nav__label">Team</span>
+      </a>
+      <a {% if page.lab_page == 'publication' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/publication/' | relative_url }}">
+        <img src="{{ '/assets/lab/icons/publication.svg' | relative_url }}" alt=""><span class="lab-nav__label">Publication</span>
+      </a>
+      <a {% if page.lab_page == 'opportunities' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/opportunities/' | relative_url }}">
+        <img src="{{ '/assets/lab/icons/opportunities.svg' | relative_url }}" alt=""><span class="lab-nav__label">Opportunities</span>
+      </a>
+      <a {% if page.lab_page == 'about' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/about/' | relative_url }}">
+        <img src="{{ '/assets/lab/icons/about.svg' | relative_url }}" alt=""><span class="lab-nav__label">About</span>
+      </a>
+    </nav>
+  </div>
+</header>

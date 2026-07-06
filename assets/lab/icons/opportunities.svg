@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Opportunities icon">
+  <defs>
+    <filter id="pinkGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.2" result="blur1"/>
+      <feGaussianBlur stdDeviation="5.5" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cyanGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.8" result="blur1"/>
+      <feGaussianBlur stdDeviation="4" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0D17"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="64" height="64" rx="12" fill="url(#panel)" opacity="0.96"/>
+  <rect x="18" y="18" width="64" height="64" rx="12" fill="none" stroke="#ff2da6" stroke-width="5.2" filter="url(#pinkGlow)"/>
+  <g fill="none" stroke="#ff2da6" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#pinkGlow)">
+    <path d="M39 34 H62 V70 H39 Z"/>
+    <path d="M30 52 H53"/>
+    <path d="M47 46 L53 52 L47 58"/>
+  </g>
+  <g fill="none" stroke="#24e7ff" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#cyanGlow)">
+    <path d="M62 43 H69"/>
+    <path d="M62 61 H69"/>
+  </g>
+</svg>

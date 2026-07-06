@@ -1,0 +1,30 @@
+lead:
+  name: "Dr Han Wu"
+  role: "Lab Director"
+  avatar: "/images/Han_2026.jpg"
+  profile_url: "https://hanwu.ac.cn/"
+  introduction: "Han is an Assistant Professor in Cyber Security at the University of Southampton. His research focuses on AI security and privacy."
+  initials: "HW"
+
+phd_students:
+  - name: "Shuyan Zou"
+    role: "PhD started from Jan 2025"
+    avatar: "/images/Shuyan_2026.jpeg"
+    profile_url: "https://www.linkedin.com/in/shuyanrocky/"
+    initials: "SZ"
+    research: "Privacy-preserving machine learning, differential privacy, and adaptive optimisation."
+  - name: "Jiawei Wang"
+    role: "PhD Started from Sep 2025"
+    avatar: "/images/Jiawei_2026.png"
+    profile_url: "https://www.linkedin.com/in/jiawei-wang-8999b3389/"
+    initials: "JW"
+    research: "Privacy Auditing, Membership Inference Attacks, Machine unlearning."
+  - name: "Hengyang Yao"
+    role: "PhD Started from Jan 2026"
+    avatar: "/images/Hengyang_2026.jpeg"
+    initials: "HY"
+    research: "Causal Inference, Privacy, Federated Learning."
+
+research_assistants: []
+
+collaborators: []

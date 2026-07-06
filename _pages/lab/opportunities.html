@@ -1,0 +1,26 @@
+---
+layout: lab
+title: Opportunities
+permalink: /lab/opportunities/
+lab_page: opportunities
+description: "PhD, visiting, internship, and collaboration opportunities at CyberPUNK Lab."
+---
+
+<div class="lab-subpage">
+  {% include lab/page-header.html icon="/assets/lab/icons/opportunities.svg" description="Work with us on secure, private, and dependable AI systems." %}
+
+  <section class="lab-opportunity-grid" aria-label="Current opportunities">
+    {% for item in site.data.lab.opportunities %}
+      <article class="lab-opportunity-card">
+        <div class="lab-opportunity-card__topline">
+          <span>{{ item.type }}</span>
+          <strong>{{ item.status }}</strong>
+        </div>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.summary }}</p>
+        <dl><dt>Deadline</dt><dd>{{ item.deadline }}</dd></dl>
+        <a class="lab-action" href="{{ item.url | relative_url }}">{{ item.action }} <span aria-hidden="true">→</span></a>
+      </article>
+    {% endfor %}
+  </section>
+</div>

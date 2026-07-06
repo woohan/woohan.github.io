@@ -1,0 +1,82 @@
+---
+layout: lab
+title: Team
+permalink: /lab/team/
+lab_page: team
+description: "Meet the researchers of CyberPUNK Lab."
+---
+
+<div class="lab-subpage lab-team-page">
+  {% include lab/page-header.html icon="/assets/lab/icons/team.svg" description="We work across cybersecurity, privacy engineering, dependable machine learning, and emerging risks in AI." %}
+
+  {% assign lead = site.data.lab.team.lead %}
+  <section class="lab-lead" aria-labelledby="lab-lead-title">
+    <h2 id="lab-lead-title" class="lab-section-title">Lab Lead / PI</h2>
+    {% if lead.profile_url %}
+      <a class="lab-avatar-link" href="{{ lead.profile_url }}" target="_blank" rel="noopener" aria-label="{{ lead.name }} profile">
+        <img class="lab-avatar" src="{{ lead.avatar | relative_url }}" alt="Portrait of {{ lead.name }}">
+      </a>
+    {% else %}
+      <img class="lab-avatar" src="{{ lead.avatar | relative_url }}" alt="Portrait of {{ lead.name }}">
+    {% endif %}
+    <h3>{{ lead.name }}</h3>
+    <p class="lab-person-role">{{ lead.role }}</p>
+    <p class="lab-lead__intro">{{ lead.introduction }}</p>
+  </section>
+
+  <section class="lab-people-section" aria-labelledby="phd-title">
+    <h2 id="phd-title" class="lab-section-title">PhD Students</h2>
+    <div class="lab-people-grid lab-people-grid--three">
+      {% for person in site.data.lab.team.phd_students %}
+        <article class="lab-person-card">
+          {% if person.profile_url %}
+            <a class="lab-avatar-link" href="{{ person.profile_url }}" target="_blank" rel="noopener" aria-label="{{ person.name }} profile">
+              {% if person.avatar %}
+                <img class="lab-avatar" src="{{ person.avatar | relative_url }}" alt="Portrait of {{ person.name }}">
+              {% else %}
+                <div class="lab-avatar lab-avatar--initials" aria-hidden="true">{{ person.initials }}</div>
+              {% endif %}
+            </a>
+          {% else %}
+            {% if person.avatar %}
+              <img class="lab-avatar" src="{{ person.avatar | relative_url }}" alt="Portrait of {{ person.name }}">
+            {% else %}
+              <div class="lab-avatar lab-avatar--initials" aria-hidden="true">{{ person.initials }}</div>
+            {% endif %}
+          {% endif %}
+          <div>
+            <h3>{{ person.name }}</h3>
+            <p class="lab-person-role">{{ person.role }}</p>
+            <p>{{ person.research }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="lab-people-section" aria-labelledby="ra-title">
+    <h2 id="ra-title" class="lab-section-title">Research Assistants</h2>
+    {% if site.data.lab.team.research_assistants.size > 0 %}
+      <div class="lab-people-grid">
+        {% for person in site.data.lab.team.research_assistants %}
+          <article class="lab-person-card">{% if person.avatar %}<img class="lab-avatar" src="{{ person.avatar | relative_url }}" alt="Portrait of {{ person.name }}">{% else %}<div class="lab-avatar lab-avatar--initials" aria-hidden="true">{{ person.initials }}</div>{% endif %}<div><h3>{{ person.name }}</h3><p class="lab-person-role">{{ person.role }}</p><p>{{ person.research }}</p></div></article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="lab-empty-state">Research assistant profiles will be added here.</p>
+    {% endif %}
+  </section>
+
+  <section class="lab-people-section" aria-labelledby="collaborator-title">
+    <h2 id="collaborator-title" class="lab-section-title">Collaborators</h2>
+    {% if site.data.lab.team.collaborators.size > 0 %}
+      <div class="lab-people-grid">
+        {% for person in site.data.lab.team.collaborators %}
+          <article class="lab-person-card">{% if person.avatar %}<img class="lab-avatar" src="{{ person.avatar | relative_url }}" alt="Portrait of {{ person.name }}">{% else %}<div class="lab-avatar lab-avatar--initials" aria-hidden="true">{{ person.initials }}</div>{% endif %}<div><h3>{{ person.name }}</h3><p class="lab-person-role">{{ person.role }}</p><p>{{ person.research }}</p></div></article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="lab-empty-state">Collaborator profiles will be added here.</p>
+    {% endif %}
+  </section>
+</div>

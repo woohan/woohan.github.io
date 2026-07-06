@@ -1,0 +1,37 @@
+---
+layout: lab
+title: News
+permalink: /lab/news/
+lab_page: news
+description: "Latest updates, announcements, and highlights from CyberPUNK Lab."
+---
+
+<div class="lab-subpage">
+  {% include lab/page-header.html icon="/assets/lab/icons/news.svg" description="Latest updates, announcements, and highlights from CyberPUNK Lab." %}
+
+  <section class="lab-news-list" aria-label="Lab news">
+    {% assign visible_news = site.data.lab.news | where_exp: "item", "item.date >= '2025-01'" %}
+    {% for item in visible_news %}
+      <article class="lab-news-row" id="news-{{ item.date }}-{{ forloop.index }}">
+        <time datetime="{{ item.date }}">
+          <strong>{{ item.month }}</strong>
+          <span>{{ item.date | slice: 0, 4 }}</span>
+        </time>
+        <div class="lab-news-row__body">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.body_html }}</p>
+        </div>
+        <div class="lab-news-row__media" aria-label="{{ item.venue_short }} visual">
+          {% if item.image %}
+            <img
+              class="lab-news-row__image{% if item.image_fit == 'cover' %} lab-news-row__image--cover{% endif %}"
+              src="{{ item.image | relative_url }}"
+              alt="{{ item.venue_short }} visual">
+          {% else %}
+            <span>{{ item.venue_short }}</span>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+</div>

@@ -1,0 +1,37 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="{{ page.description | default: 'CyberPUNK Lab — Cybersecurity, Privacy, and UNKnown risks.' | escape }}">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}CyberPUNK Lab</title>
+    <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+    {% if page.lab_page == 'home' %}
+      <link rel="preload" as="image" href="{{ '/assets/lab/homepage-background-title.png' | relative_url }}" fetchpriority="high">
+    {% endif %}
+    <script>
+      try {
+        if (sessionStorage.getItem('cyberpunkLabVisited')) {
+          document.documentElement.classList.add('lab-has-visited');
+        }
+        sessionStorage.setItem('cyberpunkLabVisited', '1');
+      } catch (error) {}
+    </script>
+    <link rel="stylesheet" href="{{ '/assets/lab/lab.css' | relative_url }}">
+  </head>
+  <body class="lab-site">
+    <a class="lab-skip-link" href="#lab-main">Skip to content</a>
+    {% include lab/header.html %}
+    <main id="lab-main">
+      {{ content }}
+    </main>
+    <footer class="lab-footer">
+      <p><strong>Cyber<span>PUNK</span> Lab</strong> · Cybersecurity · Privacy · UNKnown risks</p>
+      <p>University of Southampton</p>
+    </footer>
+  </body>
+</html>

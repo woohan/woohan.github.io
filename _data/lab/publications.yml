@@ -1,0 +1,148 @@
+- year: 2026
+  date: "2026-04"
+  title: "SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"
+  authors: "Shuyan Zou, Shaowei Wang, Zhanxing Zhu, Jin Li, Changyu Dong, Vladimiro Sassone, Han Wu"
+  venue: "ICML 2026"
+  tags:
+    - "ICML 2026"
+    - "Spotlight (top 2.2%)"
+  image: "/assets/lab/publications/slaclip-figure.png"
+  image_position: "center"
+  links:
+    pdf: "https://openreview.net/pdf?id=48suUeYKdb"
+    project: "https://openreview.net/forum?id=48suUeYKdb&noteId=QbtjjzaCwt"
+
+- year: 2026
+  date: "2026-04"
+  title: "An Adaptive Mini-Batching Strategy for Reliable Streaming Data Delivery in Real-Time"
+  authors: "Han Wu, Zhihao Shang, Huaming Wu, Katinka Wolter"
+  venue: "IEEE Transactions on Reliability"
+  tags:
+    - "IEEE Transactions on Reliability"
+  image: "/assets/lab/publications/reliability-minibatching-figure.png"
+  image_position: "center"
+  links:
+    doi: "https://doi.org/10.1109/TR.2026.3687124"
+
+- year: 2026
+  date: "2026-03"
+  title: "Peeling the Layers of Privacy-Utility Onion on Tabular Data"
+  authors: "Jiawei Wang, Zilong Zhao, Leonardo Aniello, Han Wu"
+  venue: "EuroMLSys Workshop 2026"
+  tags:
+    - "EuroMLSys Workshop 2026"
+  image: "/assets/lab/publications/privacy-utility-onion-figure.png"
+  image_position: "center"
+  links:
+    doi: "https://doi.org/10.1145/3805621.3807630"
+
+- year: 2025
+  date: "2025-08"
+  title: "Beyond Statistical Estimation: Differentially Private Individual Computation via Shuffling"
+  authors: "Shaowei Wang, Changyu Dong, Xiangfu Song, Jin Li, Zhili Zhou, Di Wang, Han Wu"
+  venue: "USENIX Security 2025"
+  tags:
+    - "USENIX Security 2025"
+    - "Honorable Mention"
+  image: "/images/publications/usenix25.png"
+  image_position: "58% center"
+  links:
+    pdf: "https://arxiv.org/pdf/2406.18145"
+
+- year: 2025
+  date: "2025-03"
+  title: "GTV: Generating Tabular Data via Vertical Federated Learning"
+  authors: "Zilong Zhao, Han Wu, Aad van Moorsel, Lydia Y. Chen"
+  venue: "DSN 2025"
+  tags:
+    - "DSN 2025"
+  image: "/images/publications/gtv.jpg"
+  image_position: "54% 42%"
+  links:
+    pdf: "https://arxiv.org/pdf/2302.01706"
+
+- year: 2025
+  date: "2025-03"
+  title: "Impacts of Physical-Layer Information on Epidemic Spreading in Cyber-Physical Networked Systems"
+  authors: "Xianglai Yuan, Yichao Yao, Han Wu, Minyu Feng"
+  venue: "IEEE Transactions on Circuits and Systems I"
+  tags:
+    - "IEEE TCSI 2025"
+  image: "/assets/lab/publications/tcsi-epidemic-figure.png"
+  image_position: "center"
+  links:
+    doi: "https://doi.org/10.1109/TCSI.2025.3550386"
+
+- year: 2024
+  date: "2024-08"
+  title: "The Face of Deception: The Impact of AI-Generated Photos on Malicious Social Bots"
+  authors: "Maxim Kolomeets, Han Wu, Lei Shi, Aad van Moorsel"
+  venue: "IEEE TCSS"
+  tags:
+    - "IEEE TCSS"
+  image: "/images/publications/tcss.png"
+  image_position: "70% 28%"
+  links:
+    doi: "https://ieeexplore.ieee.org/document/10712168"
+
+- year: 2023
+  date: "2023-12"
+  title: "Complex Online Harms and the Smart Home: A Scoping Review"
+  authors: "Shola Olabode, Rebecca Owens, Viana Nijia Zhang, Jehana Copilah-Ali, Maxim Kolomeets, Han Wu, et al."
+  venue: "Future Generation Computer Systems"
+  tags:
+    - "FGCS"
+  image: "/images/publications/scopingreview.jpg"
+  image_position: "78% 54%"
+  links:
+    doi: "https://www.sciencedirect.com/science/article/pii/S0167739X23003199"
+
+- year: 2022
+  date: "2022-10"
+  title: "Federated Learning for Tabular Data: Exploring Potential Risk to Privacy"
+  authors: "Han Wu, Zilong Zhao, Lydia Y. Chen, Aad van Moorsel"
+  venue: "ISSRE 2022"
+  tags:
+    - "ISSRE 2022"
+  image: "/images/publications/issre22.jpg"
+  image_position: "47% 54%"
+  links:
+    doi: "https://ieeexplore.ieee.org/abstract/document/9978976"
+
+- year: 2022
+  date: "2022-09"
+  title: "LDRNet: Enabling Real-time Document Localization on Mobile Devices"
+  authors: "Han Wu, Holland Qian, Huaming Wu, Aad van Moorsel"
+  venue: "ECML PKDD 2022"
+  tags:
+    - "ECML PKDD 2022"
+  image: "/images/publications/ecml22.jpg"
+  image_position: "50% 48%"
+  links:
+    doi: "https://link.springer.com/chapter/10.1007/978-3-031-23618-1_42"
+    code: "https://github.com/niuwagege/LDRNet"
+
+- year: 2022
+  date: "2022-05"
+  title: "CBlockSim: A Modular High-Performance Blockchain Simulator"
+  authors: "Xuyang Ma, Han Wu, Du Xu, Katinka Wolter"
+  venue: "IEEE ICBC 2022"
+  tags:
+    - "IEEE ICBC 2022"
+  image: "/images/publications/icbc22.jpg"
+  image_position: "50% 42%"
+  links:
+    pdf: "https://arxiv.org/pdf/2203.05788.pdf"
+    code: "https://github.com/xuyangm/CBlockSim"
+
+- year: 2021
+  date: "2021-03"
+  title: "Constrained Multi-objective Optimization for IoT-enabled Computation Offloading"
+  authors: "Guang Peng, Huaming Wu, Han Wu, Katinka Wolter"
+  venue: "IEEE Internet of Things Journal"
+  tags:
+    - "IEEE IoT-J"
+  image: "/images/publications/iot21.jpg"
+  image_position: "62% 48%"
+  links:
+    doi: "https://ieeexplore.ieee.org/abstract/document/9382409"

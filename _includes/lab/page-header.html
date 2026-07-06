@@ -1,0 +1,4 @@
+<header class="lab-page-heading">
+  {% if include.icon %}<img class="lab-page-heading__icon" src="{{ include.icon | relative_url }}" alt="">{% endif %}
+  {% if include.description %}<p>{{ include.description }}</p>{% endif %}
+</header>
