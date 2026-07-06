@@ -172,6 +172,10 @@ class LabSiteTest < Minitest::Test
     css = source("assets/lab/lab.css")
 
     assert_match(/\.lab-site \.lab-nav\s*\{[^}]*min-width:\s*0;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-header__inner\s*\{[^}]*flex-direction:\s*column;[^}]*align-items:\s*center;[^}]*gap:\s*0\.85rem;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-wordmark\s*\{[^}]*margin-inline:\s*auto;[^}]*text-align:\s*center;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav\s*\{[^}]*justify-content:\s*center;[^}]*flex-wrap:\s*wrap;[^}]*overflow-x:\s*visible;[^}]*row-gap:\s*0\.15rem;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav a\s*\{[^}]*min-width:\s*auto;[^}]*flex:\s*0 1 auto;/m, css)
   end
 
   def test_lab_wordmark_uses_the_site_typeface_with_restrained_weight
