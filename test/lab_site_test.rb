@@ -180,10 +180,10 @@ class LabSiteTest < Minitest::Test
     assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-header__inner\s*\{[^}]*flex-direction:\s*column;[^}]*align-items:\s*center;[^}]*gap:\s*0\.85rem;/m, css)
     assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-wordmark\s*\{[^}]*margin-inline:\s*auto;[^}]*text-align:\s*center;/m, css)
     assert_match(/\.lab-site \.lab-mobile-nav\s*\{[^}]*display:\s*none;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav\s*\{[^}]*display:\s*none;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav\s*\{[^}]*display:\s*block;[^}]*width:\s*100%;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav__summary\s*\{[^}]*display:\s*flex;[^}]*justify-content:\s*space-between;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav__menu\s*\{[^}]*display:\s*grid;[^}]*grid-template-columns:\s*1fr;/m, css)
+    assert_match(/@media \(max-width: 860px\)[\s\S]+?\.lab-site \.lab-nav\s*\{[^}]*display:\s*none !important;/m, css)
+    assert_match(/@media \(max-width: 860px\)[\s\S]+?\.lab-site \.lab-mobile-nav\s*\{[^}]*display:\s*block !important;[^}]*width:\s*100%;/m, css)
+    assert_match(/@media \(max-width: 860px\)[\s\S]+?\.lab-site \.lab-mobile-nav__summary\s*\{[^}]*display:\s*flex;[^}]*justify-content:\s*space-between;/m, css)
+    assert_match(/@media \(max-width: 860px\)[\s\S]+?\.lab-site \.lab-mobile-nav__menu\s*\{[^}]*display:\s*grid;[^}]*grid-template-columns:\s*1fr;/m, css)
   end
 
   def test_lab_wordmark_uses_the_site_typeface_with_restrained_weight
