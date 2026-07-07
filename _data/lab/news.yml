@@ -33,8 +33,8 @@
 
 - date: "2026-01"
   month: "Jan"
-  title: "Welcome to Hengyang Yao"
-  home_title: "Welcome to Hengyang Yao."
+  title: "Hengyang Yao joined CyberPUNK Lab as a PhD student"
+  home_title: "Hengyang Yao joined CyberPUNK Lab as a PhD student."
   summary: "Hengyang, from University of Birmingham, joined CyberPUNK lab as a PhD student and is studying machine unlearning. Welcome!"
   body_html: >-
     <a href="/lab/team/">Hengyang Yao</a>, from University of Birmingham, joined CyberPUNK lab as a PhD student. Welcome!
@@ -49,7 +49,7 @@
   home_title: "One paper accepted at the RSD Workshop @ AAAI 2026."
   summary: "Our research on evolutionary tabular data synthesis in vertical federated learning systems was accepted at the Responsible Synthetic Data workshop."
   body_html: >-
-    🎉 Our paper <a href="https://openreview.net/forum?id=ksau9IVXPj"><em>"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"</em></a> was accepted to the <a href="https://responsible-synthetic-data.github.io/"><strong>RSD Workshop @ AAAI 2026</strong></a>. Congrats to Adethya Srinivasan — such an achievement for a second-year BSc student!
+    🎉 Our paper <a href="https://openreview.net/forum?id=ksau9IVXPj"><em>"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"</em></a> was accepted to the <a href="https://responsible-synthetic-data.github.io/"><strong>RSD Workshop @ AAAI 2026</strong></a>. Congrats to <a href="https://www.linkedin.com/in/adethya-srinivasan-7157b8302/"><strong>Adethya Srinivasan</strong></a> — nice work for a second-year BSc student!
   venue_short: "RSD"
   image: "/assets/lab/news/RSD@AAAI.png"
   url: "https://openreview.net/forum?id=ksau9IVXPj"

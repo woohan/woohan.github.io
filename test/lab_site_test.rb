@@ -170,19 +170,29 @@ class LabSiteTest < Minitest::Test
 
   def test_mobile_navigation_can_shrink_without_widening_the_page
     css = source("assets/lab/lab.css")
+    header = source("_includes/lab/header.html")
 
+    assert_includes header, 'class="lab-mobile-nav"'
+    assert_includes header, 'class="lab-mobile-current"'
+    assert_includes header, 'class="lab-mobile-menu-icon"'
+    assert_equal 6, header.scan(/class="lab-mobile-nav__label"/).length
     assert_match(/\.lab-site \.lab-nav\s*\{[^}]*min-width:\s*0;/m, css)
     assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-header__inner\s*\{[^}]*flex-direction:\s*column;[^}]*align-items:\s*center;[^}]*gap:\s*0\.85rem;/m, css)
     assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-wordmark\s*\{[^}]*margin-inline:\s*auto;[^}]*text-align:\s*center;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav\s*\{[^}]*justify-content:\s*center;[^}]*flex-wrap:\s*wrap;[^}]*overflow-x:\s*visible;[^}]*row-gap:\s*0\.15rem;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav a\s*\{[^}]*min-width:\s*auto;[^}]*flex:\s*0 1 auto;/m, css)
+    assert_match(/\.lab-site \.lab-mobile-nav\s*\{[^}]*display:\s*none;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav\s*\{[^}]*display:\s*none;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav\s*\{[^}]*display:\s*block;[^}]*width:\s*100%;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav__summary\s*\{[^}]*display:\s*flex;[^}]*justify-content:\s*space-between;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav__menu\s*\{[^}]*display:\s*grid;[^}]*grid-template-columns:\s*1fr;/m, css)
   end
 
   def test_lab_wordmark_uses_the_site_typeface_with_restrained_weight
     css = source("assets/lab/lab.css")
 
-    assert_match(/\.lab-site \.lab-wordmark\s*\{[^}]*color:\s*#075f9d;[^}]*font-family:\s*inherit;[^}]*font-size:\s*clamp\(1\.45rem, 2\.1vw, 2\.15rem\);[^}]*font-weight:\s*800;[^}]*letter-spacing:\s*-0\.025em;/m, css)
+    assert_match(/\.lab-site \.lab-wordmark\s*\{[^}]*color:\s*#087bd1;[^}]*font-family:\s*inherit;[^}]*font-size:\s*clamp\(1\.45rem, 2\.1vw, 2\.15rem\);[^}]*font-weight:\s*800;[^}]*letter-spacing:\s*-0\.025em;/m, css)
     assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-wordmark\s*\{[^}]*font-size:\s*1\.5rem;/m, css)
+    assert_match(/\.lab-site \.lab-wordmark span\s*\{[^}]*animation:\s*lab-punk-breathe 4\.8s ease-in-out infinite;/m, css)
+    assert_match(/@keyframes lab-punk-breathe\s*\{[\s\S]*?0%,\s*100%\s*\{[^}]*text-shadow:[\s\S]*?50%\s*\{[^}]*text-shadow:/m, css)
     refute_match(/\.lab-site \.lab-wordmark\s*\{[^}]*(?:Arial Narrow|Impact|Haettenschweiler)/m, css)
   end
 
@@ -234,7 +244,8 @@ class LabSiteTest < Minitest::Test
     assert_match(/\.lab-site \.lab-subpage \.lab-news-row:nth-child\(3\),[\s\S]*?animation-delay:\s*240ms;/m, css)
     assert_match(/@keyframes lab-card-rise\s*\{[\s\S]*?0%\s*\{[^}]*opacity:\s*0;[^}]*transform:\s*translate3d\(0, 34px, 0\);[^}]*\}[\s\S]*?100%\s*\{[^}]*opacity:\s*1;[^}]*transform:\s*translate3d\(0, 0, 0\);/m, css)
     assert_match(/@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.lab-site \.lab-subpage \.lab-news-row,\s*\.lab-site \.lab-subpage \.lab-person-card,\s*\.lab-site \.lab-subpage \.lab-publication-row,\s*\.lab-site \.lab-subpage \.lab-opportunity-card,\s*\.lab-site \.lab-subpage \.lab-name-meaning article,\s*\.lab-site \.lab-subpage \.lab-research-focus\s*\{[^}]*animation:\s*none !important;/m, css)
-    refute_match(/@keyframes lab-card-rise[\s\S]*?(?:filter|backdrop-filter)/m, css)
+    card_rise = css[/@keyframes lab-card-rise\s*\{[\s\S]*?\n\}/m]
+    refute_match(/(?:filter|backdrop-filter)/, card_rise)
   end
 
   def test_team_panel_is_forty_percent_of_its_previous_tablet_width
@@ -288,7 +299,7 @@ class LabSiteTest < Minitest::Test
     prepared_asset = ROOT.join("plan_lab_materials/homepage_background_title.png")
     published_asset = ROOT.join("assets/lab/homepage-background-title.png")
 
-    assert File.exist?(published_asset), "published lab homepage background asset should exist"
+    assert File.exist?(published_asset), "published homepage background should exist"
     if File.exist?(prepared_asset)
       assert_equal Digest::SHA256.file(prepared_asset).hexdigest,
                    Digest::SHA256.file(published_asset).hexdigest
@@ -368,7 +379,7 @@ class LabSiteTest < Minitest::Test
     assert_match(/\.lab-site \.lab-screen__body\s*\{[^}]*isolation:\s*isolate;/m, css)
     refute_match(/\.lab-site \.lab-screen::(?:before|after)\s*\{[^}]*animation:/m, css)
     refute_includes css, "@keyframes lab-crt-beam"
-    refute_match(/rgba\(2, 7, 10, 0\.94\)|filter:\s*drop-shadow/, css)
+    refute_match(/rgba\(2, 7, 10, 0\.94\)/, css)
   end
 
   def test_homepage_crt_screens_use_a_brighter_near_white_base
@@ -459,7 +470,7 @@ class LabSiteTest < Minitest::Test
       "One paper accepted to ICML 2026 as Spotlight (top 2.2%)!",
       "One paper accepted by IEEE Transactions on Reliability.",
       "One paper accepted at EuroMLSys 2026.",
-      "Welcome to Hengyang Yao.",
+      "Hengyang Yao joined CyberPUNK Lab as a PhD student.",
       "One paper accepted at the RSD Workshop @ AAAI 2026."
     ], news.take(5).map { |item| item.fetch("home_title") }
     assert news.take(5).all? { |item| item.fetch("home_title").length <= 80 },
@@ -723,7 +734,7 @@ class LabSiteTest < Minitest::Test
 
     assert_match(/\.lab-site \.lab-nav a\s*\{[^}]*font-size:\s*1\.092rem;/m, css)
     assert_match(/@media \(max-width: 1180px\)[\s\S]+?\.lab-site \.lab-nav a\s*\{[^}]*font-size:\s*0\.98rem;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-nav a\s*\{[^}]*font-size:\s*0\.896rem;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-mobile-nav__menu a\s*\{[^}]*font-size:\s*0\.896rem;/m, css)
   end
 
   def test_active_and_hovered_navigation_items_light_up_as_cyan_neon
@@ -739,5 +750,15 @@ class LabSiteTest < Minitest::Test
     assert_match(/@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.lab-site \.lab-nav a\.is-active,\s*\.lab-site \.lab-nav a:not\(\.is-active\):hover,\s*\.lab-site \.lab-nav a:not\(\.is-active\):focus-visible\s*\{[^}]*animation:\s*none !important;[^}]*transform:\s*none !important;/m, css)
     refute_match(/\.lab-site \.lab-nav a\.is-active,[^{]+\{[^}]*-webkit-text-stroke:\s*0\.6px/m, css)
     refute_match(/\.lab-site \.lab-nav a\.is-active\s*\{[^}]*#ff2fa3/m, css)
+  end
+
+  def test_about_identity_terms_are_red_and_glowing
+    about = source("_pages/lab/about.html")
+    css = source("assets/lab/lab.css")
+
+    assert_includes about, '<strong class="lab-punk-term">Cyber</strong>security'
+    assert_includes about, '<strong class="lab-punk-term">P</strong>rivacy'
+    assert_includes about, '<strong class="lab-punk-term">UNK</strong>nown'
+    assert_match(/\.lab-site \.lab-punk-term\s*\{[^}]*color:\s*var\(--lab-red\);[^}]*font-weight:\s*900;[^}]*text-shadow:[^}]*0 0 10px rgba\(255, 31, 49, 0\.55\);/m, css)
   end
 end

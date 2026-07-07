@@ -1,5 +1,17 @@
 <header class="lab-header">
   <div class="lab-header__inner">
+    {% assign lab_current_label = 'Home' %}
+    {% if page.lab_page == 'news' %}
+      {% assign lab_current_label = 'News' %}
+    {% elsif page.lab_page == 'team' %}
+      {% assign lab_current_label = 'Team' %}
+    {% elsif page.lab_page == 'publication' %}
+      {% assign lab_current_label = 'Publication' %}
+    {% elsif page.lab_page == 'opportunities' %}
+      {% assign lab_current_label = 'Opportunities' %}
+    {% elsif page.lab_page == 'about' %}
+      {% assign lab_current_label = 'About' %}
+    {% endif %}
     <a class="lab-wordmark" href="{{ '/lab/' | relative_url }}" aria-label="CyberPUNK Lab home">
       Cyber<span>PUNK</span> Lab
     </a>
@@ -23,5 +35,19 @@
         <img src="{{ '/assets/lab/icons/about.svg' | relative_url }}" alt=""><span class="lab-nav__label">About</span>
       </a>
     </nav>
+    <details class="lab-mobile-nav">
+      <summary class="lab-mobile-nav__summary" aria-label="Open lab navigation">
+        <span class="lab-mobile-current">{{ lab_current_label }}</span>
+        <span class="lab-mobile-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </summary>
+      <nav id="lab-mobile-nav-menu" class="lab-mobile-nav__menu" aria-label="Mobile lab navigation">
+        <a {% if page.lab_page == 'home' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/' | relative_url }}"><span class="lab-mobile-nav__label">Home</span></a>
+        <a {% if page.lab_page == 'news' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/news/' | relative_url }}"><span class="lab-mobile-nav__label">News</span></a>
+        <a {% if page.lab_page == 'team' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/team/' | relative_url }}"><span class="lab-mobile-nav__label">Team</span></a>
+        <a {% if page.lab_page == 'publication' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/publication/' | relative_url }}"><span class="lab-mobile-nav__label">Publication</span></a>
+        <a {% if page.lab_page == 'opportunities' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/opportunities/' | relative_url }}"><span class="lab-mobile-nav__label">Opportunities</span></a>
+        <a {% if page.lab_page == 'about' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/about/' | relative_url }}"><span class="lab-mobile-nav__label">About</span></a>
+      </nav>
+    </details>
   </div>
 </header>
