@@ -2061,3 +2061,32 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
     animation: none !important;
   }
 }
+/* Shared, static layered top edge for lab subpage cards. */
+body.lab-site .lab-news-row,
+body.lab-site .lab-publication-row,
+body.lab-site .lab-person-card {
+  position: relative;
+}
+
+body.lab-site .lab-news-row::before,
+body.lab-site .lab-publication-row::before,
+body.lab-site .lab-person-card::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 42, 72, 0.18) 0%,
+    rgba(255, 42, 72, 0.92) 16%,
+    rgba(255, 94, 118, 0.58) 62%,
+    rgba(255, 42, 72, 0.12) 100%
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.82),
+    0 3px 0 rgba(255, 42, 72, 0.16);
+}
