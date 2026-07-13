@@ -33,5 +33,51 @@ layout: compress
       <p><strong>Cyber<span>PUNK</span> Lab</strong> · Cybersecurity · Privacy · UNKnown risks</p>
       <p>University of Southampton</p>
     </footer>
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const closeDuration = 280;
+
+        document.querySelectorAll('.lab-mobile-nav').forEach((nav) => {
+          const summary = nav.querySelector('.lab-mobile-nav__summary');
+          const menu = nav.querySelector('.lab-mobile-nav__menu');
+          if (!summary || !menu) return;
+
+          let closeTimer;
+
+          const finishClose = () => {
+            window.clearTimeout(closeTimer);
+            nav.open = false;
+            nav.classList.remove('is-closing');
+          };
+
+          const closeSmoothly = () => {
+            if (!nav.open || nav.classList.contains('is-closing')) return;
+            if (reduceMotion.matches) {
+              finishClose();
+              return;
+            }
+            nav.classList.add('is-closing');
+            closeTimer = window.setTimeout(finishClose, closeDuration);
+          };
+
+          summary.addEventListener('click', (event) => {
+            if (!nav.open) {
+              window.clearTimeout(closeTimer);
+              nav.classList.remove('is-closing');
+              return;
+            }
+            event.preventDefault();
+            closeSmoothly();
+          });
+
+          menu.addEventListener('animationend', (event) => {
+            if (event.animationName === 'lab-mobile-menu-fold') {
+              finishClose();
+            }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

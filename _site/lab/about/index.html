@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="About CyberPUNK Lab and its research mission.">
+    <title>About · CyberPUNK Lab</title>
+    <link rel="icon" href="/images/favicon.ico">
+    
+    <script>
+      try {
+        if (sessionStorage.getItem('cyberpunkLabVisited')) {
+          document.documentElement.classList.add('lab-has-visited');
+        }
+        sessionStorage.setItem('cyberpunkLabVisited', '1');
+      } catch (error) {}
+    </script>
+    <link rel="stylesheet" href="/assets/lab/lab.css">
+  </head>
+  <body class="lab-site">
+    <a class="lab-skip-link" href="#lab-main">Skip to content</a>
+    <header class="lab-header">
+  <div class="lab-header__inner">
+    
+    
+    <a class="lab-wordmark" href="/lab/" aria-label="CyberPUNK Lab home">
+      Cyber<span>PUNK</span> Lab
+    </a>
+    <nav class="lab-nav" aria-label="Lab navigation">
+      <a  href="/lab/">
+        <img src="/assets/lab/icons/home.svg" alt=""><span class="lab-nav__label">Home</span>
+      </a>
+      <a  href="/lab/news/">
+        <img src="/assets/lab/icons/news.svg" alt=""><span class="lab-nav__label">News</span>
+      </a>
+      <a  href="/lab/team/">
+        <img src="/assets/lab/icons/team.svg" alt=""><span class="lab-nav__label">Team</span>
+      </a>
+      <a  href="/lab/publication/">
+        <img src="/assets/lab/icons/publication.svg" alt=""><span class="lab-nav__label">Publication</span>
+      </a>
+      <a  href="/lab/opportunities/">
+        <img src="/assets/lab/icons/opportunities.svg" alt=""><span class="lab-nav__label">Opportunities</span>
+      </a>
+      <a class="is-active" aria-current="page" href="/lab/about/">
+        <img src="/assets/lab/icons/about.svg" alt=""><span class="lab-nav__label">About</span>
+      </a>
+    </nav>
+    <details class="lab-mobile-nav">
+      <summary class="lab-mobile-nav__summary" aria-label="Open lab navigation">
+        <span class="lab-mobile-current">About</span>
+        <span class="lab-mobile-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </summary>
+      <nav id="lab-mobile-nav-menu" class="lab-mobile-nav__menu" aria-label="Mobile lab navigation">
+        <a  href="/lab/"><span class="lab-mobile-nav__label">Home</span></a>
+        <a  href="/lab/news/"><span class="lab-mobile-nav__label">News</span></a>
+        <a  href="/lab/team/"><span class="lab-mobile-nav__label">Team</span></a>
+        <a  href="/lab/publication/"><span class="lab-mobile-nav__label">Publication</span></a>
+        <a  href="/lab/opportunities/"><span class="lab-mobile-nav__label">Opportunities</span></a>
+        <a class="is-active" aria-current="page" href="/lab/about/"><span class="lab-mobile-nav__label">About</span></a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+    <main id="lab-main">
+      <div class="lab-subpage lab-about-page">
+  <header class="lab-page-heading">
+  <img class="lab-page-heading__icon" src="/assets/lab/icons/about.svg" alt="">
+  <p>Researching how modern AI systems can remain secure, private, and dependable in the face of risks we do not yet fully understand.</p>
+</header>
+
+
+  <section class="lab-about-intro">
+    <h2><strong class="lab-punk-term">Cyber</strong>security, <strong class="lab-punk-term">P</strong>rivacy, and <strong class="lab-punk-term">UNK</strong>nown risks in AI.</h2>
+    <p>CyberPUNK Lab is led by Dr Han Wu at the University of Southampton. We study AI security, privacy, and unknown risks in modern AI systems, connecting foundational research with the practical challenges of building dependable technology.</p>
+  </section>
+
+  <!-- <section class="lab-name-meaning" aria-label="Meaning of CyberPUNK">
+    <article><strong>Cyber</strong><h2>Cybersecurity</h2><p>Understanding attacks, failures, and safeguards across machine learning and distributed systems.</p></article>
+    <article><strong>P</strong><h2>Privacy</h2><p>Developing and auditing privacy-preserving learning, differential privacy, machine unlearning, and synthetic data.</p></article>
+    <article><strong>UNK</strong><h2>UNKnown risks</h2><p>Identifying emerging and poorly understood risks before they become embedded in real-world AI systems.</p></article>
+  </section>
+
+  <section class="lab-research-focus">
+    <img src="/assets/lab/icons/about.svg" alt="">
+    <div><h2>Research focus</h2><p>Our current work spans federated learning, inference attacks, differential privacy, tabular data synthesis, machine unlearning, trustworthy AI, and privacy risks in foundation models.</p></div>
+  </section> -->
+</div>
+
+    </main>
+    <footer class="lab-footer">
+      <p><strong>Cyber<span>PUNK</span> Lab</strong> · Cybersecurity · Privacy · UNKnown risks</p>
+      <p>University of Southampton</p>
+    </footer>
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const closeDuration = 280;
+
+        document.querySelectorAll('.lab-mobile-nav').forEach((nav) => {
+          const summary = nav.querySelector('.lab-mobile-nav__summary');
+          const menu = nav.querySelector('.lab-mobile-nav__menu');
+          if (!summary || !menu) return;
+
+          let closeTimer;
+
+          const finishClose = () => {
+            window.clearTimeout(closeTimer);
+            nav.open = false;
+            nav.classList.remove('is-closing');
+          };
+
+          const closeSmoothly = () => {
+            if (!nav.open || nav.classList.contains('is-closing')) return;
+            if (reduceMotion.matches) {
+              finishClose();
+              return;
+            }
+            nav.classList.add('is-closing');
+            closeTimer = window.setTimeout(finishClose, closeDuration);
+          };
+
+          summary.addEventListener('click', (event) => {
+            if (!nav.open) {
+              window.clearTimeout(closeTimer);
+              nav.classList.remove('is-closing');
+              return;
+            }
+            event.preventDefault();
+            closeSmoothly();
+          });
+
+          menu.addEventListener('animationend', (event) => {
+            if (event.animationName === 'lab-mobile-menu-fold') {
+              finishClose();
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
