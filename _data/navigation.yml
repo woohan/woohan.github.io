@@ -3,6 +3,9 @@ main:
   - title: "About me"
     url: /about/
 
+  - title: '<span class="lab-nav-wordmark"><span>Cyber</span><strong>PUNK</strong><span> Lab</span></span>'
+    url: /lab/
+
   - title: "Publications"
     url: /publications/
 

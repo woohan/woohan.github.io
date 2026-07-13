@@ -8,19 +8,25 @@ redirect_from:
   - /about.html
 ---
 
-From April 2024, I am an **Assistant Professor** ([Lecturer](https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu){:target="_blank"}) in the School of Electronics & Computer Science ([ECS](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}) at the University of Southampton. I am part of the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}, focusing on **Dependable and Secure Machine Learning Technology**. My research spans Federated Learning, Inference Attacks, Differential Privacy, Tabular Data Synthesis, and Machine Unlearning, aiming to advance secure and reliable machine learning systems for sensitive applications.
+I am the Director of [CyberPUNK Lab]({{ site.baseurl }}/lab/) and an **Assistant Professor** ([Lecturer](https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu){:target="_blank"}) in the School of Electronics & Computer Science ([ECS](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}) at the University of Southampton. I am also a member of the [Cyber Security group](https://www.southampton.ac.uk/research/institutes-centres/cyber-security){:target="_blank"}. My research interests are **AI Security and Privacy**.
 
-📣📣📣 🎓 **<span style="color:tomato">PhD Opportunities</span> at [ECS, University of Southampton](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}** 🇬🇧🎓 Prospective students who are interested in privacy-preserving machine learning and cyber security, please contact me via [email]({{ site.baseurl }}{% link _pages/contact.md %}). For research topics, please refer to [this]({{ site.baseurl }}{% link _pages/research.md %}) brief introduction or [the post](https://www.jobs.ac.uk/job/DJX190/phd-studentship-privacy-security-risks-in-machine-federated-learning-systems){:target="_blank"}. Visiting students are also welcome to apply.
+Previously, I was a Research Fellow at the University of Birmingham, working with [Prof. Aad van Moorsel](https://scholar.google.de/citations?user=FawbTj8AAAAJ&hl=en&oi=ao){:target="_blank"} on the EPSRC-funded [AGENCY](https://agencyresearch.net/){:target="_blank"} project, and a Research Associate at Newcastle University on the EPSRC-funded [FinTrust](https://gtr.ukri.org/projects?ref=EP%2FR033595%2F1){:target="_blank"} project. I received the Alan Turing Institute's [Post-Doctoral Enrichment Award 2022](https://www.turing.ac.uk/post-doctoral-enrichment-awards-pdea){:target="_blank"}.
 
-Prior to joining SOTON, I was a Research Fellow (2023-2024) in the School of Computer Science at University of Birmingham. In this role, I worked with [Prof. Aad van Moorsel](https://scholar.google.de/citations?user=FawbTj8AAAAJ&hl=en&oi=ao){:target="_blank"} on the EPSRC-funded [AGENCY](https://agencyresearch.net/){:target="_blank"} (£ 2.7M) project. I also worked as a Research Associate (2021-2023) for the EPSRC-funded [FinTrust](https://gtr.ukri.org/projects?ref=EP%2FR033595%2F1){:target="_blank"} (£ 1.0M) project at Newcastle University. I am the awardee of the [Post-Doctoral Enrichment Award 2022](https://www.turing.ac.uk/post-doctoral-enrichment-awards-pdea){:target="_blank"} granted by the Alan Turing Institute.
+<div class="home-opportunity" markdown="1">
+📣 🎓 **<span style="color:tomato">PhD Opportunities</span> at [ECS, University of Southampton](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science){:target="_blank"}** 🇬🇧 Prospective PhD and visiting students interested in AI security and privacy are welcome to contact me via [email]({{ site.baseurl }}{% link _pages/contact.md %}).
+</div>
 
-I obtained PhD degree in Computer Science from the Free University of Berlin in 2020. My PhD supervisor is [Prof. Katinka Wolter](https://scholar.google.de/citations?user=JqtocLYAAAAJ&hl=en){:target="_blank"}. I received my Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2013, and Master's degree from Tongji University in 2016.
+Further details are available on my [CV page]({{ site.baseurl }}{% link _pages/cv.md %}).
 
 
 News
 =====
 
 <section class="news-list">
+  <article class="news-card">
+    <time class="news-date">2026-06</time>
+    <p>🏅 I was selected as a <strong>Gold Reviewer for ICML 2026</strong>.</p>
+  </article>
   <article class="news-card">
     <time class="news-date">2026-04</time>
     <p>🎉 My PhD student Shuyan Zou's paper <em>"SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"</em> was accepted to <strong>ICML 2026</strong> as a <strong>Spotlight (top 2.2%)</strong> paper! Congratulations to Shuyan and all co-authors!</p>
