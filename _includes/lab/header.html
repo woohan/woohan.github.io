@@ -34,6 +34,7 @@
       <a {% if page.lab_page == 'about' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/about/' | relative_url }}">
         <img src="{{ '/assets/lab/icons/about.svg' | relative_url }}" alt=""><span class="lab-nav__label">About</span>
       </a>
+      {% include lab/theme-toggle.html %}
     </nav>
     <details class="lab-mobile-nav">
       <summary class="lab-mobile-nav__summary" aria-label="Open lab navigation">
@@ -47,6 +48,7 @@
         <a {% if page.lab_page == 'publication' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/publication/' | relative_url }}"><span class="lab-mobile-nav__label">Publication</span></a>
         <a {% if page.lab_page == 'opportunities' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/opportunities/' | relative_url }}"><span class="lab-mobile-nav__label">Opportunities</span></a>
         <a {% if page.lab_page == 'about' %}class="is-active" aria-current="page"{% endif %} href="{{ '/lab/about/' | relative_url }}"><span class="lab-mobile-nav__label">About</span></a>
+        {% include lab/theme-toggle.html %}
       </nav>
     </details>
   </div>

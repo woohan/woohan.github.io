@@ -9,6 +9,20 @@
     <link rel="icon" href="/images/favicon.ico">
     
     <script>
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem('cyberpunkLabTheme');
+      } catch (error) {}
+      const hasSavedTheme = savedTheme === 'dark' || savedTheme === 'light';
+      const useDarkTheme = hasSavedTheme
+        ? savedTheme === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.labTheme = useDarkTheme ? 'dark' : 'light';
+      document.documentElement.dataset.labThemeSource = hasSavedTheme ? 'manual' : 'system';
+      document.querySelector('meta[name="theme-color"]').setAttribute(
+        'content',
+        useDarkTheme ? '#141518' : '#ffffff'
+      );
       try {
         if (sessionStorage.getItem('cyberpunkLabVisited')) {
           document.documentElement.classList.add('lab-has-visited');
@@ -16,7 +30,7 @@
         sessionStorage.setItem('cyberpunkLabVisited', '1');
       } catch (error) {}
     </script>
-    <link rel="stylesheet" href="/assets/lab/lab.css?v=1784040214">
+    <link rel="stylesheet" href="/assets/lab/lab.css?v=1784042148">
   </head>
   <body class="lab-site">
     <a class="lab-skip-link" href="#lab-main">Skip to content</a>
@@ -46,6 +60,16 @@
       <a  href="/lab/about/">
         <img src="/assets/lab/icons/about.svg" alt=""><span class="lab-nav__label">About</span>
       </a>
+      <button class="lab-theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+  <svg class="lab-theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.1 15.4A8.4 8.4 0 0 1 8.6 3.9 8.5 8.5 0 1 0 20.1 15.4Z"/>
+  </svg>
+  <svg class="lab-theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="3.7"/>
+    <path d="M12 2.3V5M12 19v2.7M2.3 12H5M19 12h2.7M5.1 5.1 7 7M17 17l1.9 1.9M18.9 5.1 17 7M7 17l-1.9 1.9"/>
+  </svg>
+</button>
+
     </nav>
     <details class="lab-mobile-nav">
       <summary class="lab-mobile-nav__summary" aria-label="Open lab navigation">
@@ -59,6 +83,16 @@
         <a  href="/lab/publication/"><span class="lab-mobile-nav__label">Publication</span></a>
         <a  href="/lab/opportunities/"><span class="lab-mobile-nav__label">Opportunities</span></a>
         <a  href="/lab/about/"><span class="lab-mobile-nav__label">About</span></a>
+        <button class="lab-theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+  <svg class="lab-theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.1 15.4A8.4 8.4 0 0 1 8.6 3.9 8.5 8.5 0 1 0 20.1 15.4Z"/>
+  </svg>
+  <svg class="lab-theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="3.7"/>
+    <path d="M12 2.3V5M12 19v2.7M2.3 12H5M19 12h2.7M5.1 5.1 7 7M17 17l1.9 1.9M18.9 5.1 17 7M7 17l-1.9 1.9"/>
+  </svg>
+</button>
+
       </nav>
     </details>
   </div>
@@ -158,7 +192,59 @@
     <script>
       (() => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
         const closeDuration = 280;
+        const themeToggles = document.querySelectorAll('.lab-theme-toggle');
+        let followsSystemTheme = document.documentElement.dataset.labThemeSource !== 'manual';
+
+        const applyTheme = (theme, persist = true) => {
+          const isDark = theme === 'dark';
+          document.documentElement.dataset.labTheme = isDark ? 'dark' : 'light';
+          document.querySelector('meta[name="theme-color"]').setAttribute(
+            'content',
+            isDark ? '#141518' : '#ffffff'
+          );
+          themeToggles.forEach((toggle) => {
+            const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+            toggle.setAttribute('aria-label', label);
+            toggle.setAttribute('title', label);
+            toggle.setAttribute('aria-pressed', String(isDark));
+          });
+          if (persist) {
+            document.documentElement.dataset.labThemeSource = 'manual';
+            followsSystemTheme = false;
+            try {
+              localStorage.setItem('cyberpunkLabTheme', isDark ? 'dark' : 'light');
+            } catch (error) {}
+          }
+        };
+
+        applyTheme(document.documentElement.dataset.labTheme || 'light', false);
+        themeToggles.forEach((toggle) => {
+          toggle.addEventListener('click', () => {
+            applyTheme(document.documentElement.dataset.labTheme === 'dark' ? 'light' : 'dark');
+          });
+        });
+
+        const followSystemTheme = (event) => {
+          if (followsSystemTheme) {
+            applyTheme(event.matches ? 'dark' : 'light', false);
+          }
+        };
+
+        if (systemTheme.addEventListener) {
+          systemTheme.addEventListener('change', followSystemTheme);
+        } else {
+          systemTheme.addListener(followSystemTheme);
+        }
+
+        window.addEventListener('storage', (event) => {
+          if (event.key !== 'cyberpunkLabTheme') return;
+          const hasManualTheme = event.newValue === 'dark' || event.newValue === 'light';
+          followsSystemTheme = !hasManualTheme;
+          document.documentElement.dataset.labThemeSource = hasManualTheme ? 'manual' : 'system';
+          applyTheme(hasManualTheme ? event.newValue : (systemTheme.matches ? 'dark' : 'light'), false);
+        });
 
         document.querySelectorAll('.lab-mobile-nav').forEach((nav) => {
           const summary = nav.querySelector('.lab-mobile-nav__summary');
@@ -166,6 +252,7 @@
           if (!summary || !menu) return;
 
           let closeTimer;
+          let lastScrollY = window.scrollY;
 
           const finishClose = () => {
             window.clearTimeout(closeTimer);
@@ -196,6 +283,27 @@
           menu.addEventListener('animationend', (event) => {
             if (event.animationName === 'lab-mobile-menu-fold') {
               finishClose();
+            }
+          });
+
+          document.addEventListener('pointerdown', (event) => {
+            if (nav.open && !nav.contains(event.target)) {
+              closeSmoothly();
+            }
+          });
+
+          window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (nav.open && currentScrollY > lastScrollY) {
+              closeSmoothly();
+            }
+            lastScrollY = currentScrollY;
+          }, { passive: true });
+
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && nav.open) {
+              closeSmoothly();
+              summary.focus();
             }
           });
         });
