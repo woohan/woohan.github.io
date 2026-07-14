@@ -11,7 +11,7 @@ description: "PhD, visiting, internship, and collaboration opportunities at Cybe
 
   <section class="lab-opportunity-grid" aria-label="Current opportunities">
     {% for item in site.data.lab.opportunities %}
-      <article class="lab-opportunity-card">
+      <article class="lab-opportunity-card" id="opportunity-{{ item.id }}">
         <div class="lab-opportunity-card__topline">
           <span>{{ item.type }}</span>
           <strong>{{ item.status }}</strong>

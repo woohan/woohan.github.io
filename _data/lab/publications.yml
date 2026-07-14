@@ -1,4 +1,6 @@
-- year: 2026
+# Every item needs a stable, unique id used by publication card anchors.
+- id: "slaclip-icml-2026"
+  year: 2026
   date: "2026-04"
   title: "SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"
   authors: "Shuyan Zou, Shaowei Wang, Zhanxing Zhu, Jin Li, Changyu Dong, Vladimiro Sassone, Han Wu"
@@ -12,7 +14,8 @@
     pdf: "https://openreview.net/pdf?id=48suUeYKdb"
     project: "https://openreview.net/forum?id=48suUeYKdb&noteId=QbtjjzaCwt"
 
-- year: 2026
+- id: "adaptive-mini-batching-ieee-tr-2026"
+  year: 2026
   date: "2026-04"
   title: "An Adaptive Mini-Batching Strategy for Reliable Streaming Data Delivery in Real-Time"
   authors: "Han Wu, Zhihao Shang, Huaming Wu, Katinka Wolter"
@@ -24,7 +27,8 @@
   links:
     doi: "https://doi.org/10.1109/TR.2026.3687124"
 
-- year: 2026
+- id: "privacy-utility-onion-euromlsys-2026"
+  year: 2026
   date: "2026-03"
   title: "Peeling the Layers of Privacy-Utility Onion on Tabular Data"
   authors: "Jiawei Wang, Zilong Zhao, Leonardo Aniello, Han Wu"
@@ -36,7 +40,8 @@
   links:
     doi: "https://doi.org/10.1145/3805621.3807630"
 
-- year: 2025
+- id: "dp-individual-computation-usenix-2025"
+  year: 2025
   date: "2025-08"
   title: "Beyond Statistical Estimation: Differentially Private Individual Computation via Shuffling"
   authors: "Shaowei Wang, Changyu Dong, Xiangfu Song, Jin Li, Zhili Zhou, Di Wang, Han Wu"
@@ -49,7 +54,8 @@
   links:
     pdf: "https://arxiv.org/pdf/2406.18145"
 
-- year: 2025
+- id: "gtv-dsn-2025"
+  year: 2025
   date: "2025-03"
   title: "GTV: Generating Tabular Data via Vertical Federated Learning"
   authors: "Zilong Zhao, Han Wu, Aad van Moorsel, Lydia Y. Chen"
@@ -61,7 +67,8 @@
   links:
     pdf: "https://arxiv.org/pdf/2302.01706"
 
-- year: 2025
+- id: "physical-layer-epidemic-tcsi-2025"
+  year: 2025
   date: "2025-03"
   title: "Impacts of Physical-Layer Information on Epidemic Spreading in Cyber-Physical Networked Systems"
   authors: "Xianglai Yuan, Yichao Yao, Han Wu, Minyu Feng"
@@ -73,7 +80,8 @@
   links:
     doi: "https://doi.org/10.1109/TCSI.2025.3550386"
 
-- year: 2024
+- id: "face-of-deception-tcss-2024"
+  year: 2024
   date: "2024-08"
   title: "The Face of Deception: The Impact of AI-Generated Photos on Malicious Social Bots"
   authors: "Maxim Kolomeets, Han Wu, Lei Shi, Aad van Moorsel"
@@ -85,7 +93,8 @@
   links:
     doi: "https://ieeexplore.ieee.org/document/10712168"
 
-- year: 2023
+- id: "online-harms-smart-home-fgcs-2023"
+  year: 2023
   date: "2023-12"
   title: "Complex Online Harms and the Smart Home: A Scoping Review"
   authors: "Shola Olabode, Rebecca Owens, Viana Nijia Zhang, Jehana Copilah-Ali, Maxim Kolomeets, Han Wu, et al."
@@ -97,7 +106,8 @@
   links:
     doi: "https://www.sciencedirect.com/science/article/pii/S0167739X23003199"
 
-- year: 2022
+- id: "federated-learning-tabular-privacy-issre-2022"
+  year: 2022
   date: "2022-10"
   title: "Federated Learning for Tabular Data: Exploring Potential Risk to Privacy"
   authors: "Han Wu, Zilong Zhao, Lydia Y. Chen, Aad van Moorsel"
@@ -109,7 +119,8 @@
   links:
     doi: "https://ieeexplore.ieee.org/abstract/document/9978976"
 
-- year: 2022
+- id: "ldrnet-ecml-pkdd-2022"
+  year: 2022
   date: "2022-09"
   title: "LDRNet: Enabling Real-time Document Localization on Mobile Devices"
   authors: "Han Wu, Holland Qian, Huaming Wu, Aad van Moorsel"
@@ -122,7 +133,8 @@
     doi: "https://link.springer.com/chapter/10.1007/978-3-031-23618-1_42"
     code: "https://github.com/niuwagege/LDRNet"
 
-- year: 2022
+- id: "cblocksim-icbc-2022"
+  year: 2022
   date: "2022-05"
   title: "CBlockSim: A Modular High-Performance Blockchain Simulator"
   authors: "Xuyang Ma, Han Wu, Du Xu, Katinka Wolter"
@@ -135,7 +147,8 @@
     pdf: "https://arxiv.org/pdf/2203.05788.pdf"
     code: "https://github.com/xuyangm/CBlockSim"
 
-- year: 2021
+- id: "iot-offloading-iotj-2021"
+  year: 2021
   date: "2021-03"
   title: "Constrained Multi-objective Optimization for IoT-enabled Computation Offloading"
   authors: "Guang Peng, Huaming Wu, Han Wu, Katinka Wolter"
@@ -147,7 +160,8 @@
   links:
     doi: "https://ieeexplore.ieee.org/abstract/document/9382409"
 
-- year: 2020
+- id: "reactive-batching-issre-2020"
+  year: 2020
   date: "2020-10"
   title: "A Reactive Batching Strategy of Apache Kafka for Reliable Stream Processing in Real-Time"
   authors: "Han Wu, Zhihao Shang, Guang Peng, Katinka Wolter"
@@ -159,7 +173,8 @@
   links:
     doi: "https://ieeexplore.ieee.org/abstract/document/9251089"
 
-- year: 2020
+- id: "kafka-delivery-dsn-2020"
+  year: 2020
   date: "2020-06"
   title: "Learning to Reliably Deliver Streaming Data with Apache Kafka"
   authors: "Han Wu, Zhihao Shang, Katinka Wolter"
@@ -171,7 +186,8 @@
   links:
     doi: "https://ieeexplore.ieee.org/abstract/document/9153457"
 
-- year: 2019
+- id: "trak-issrew-2019"
+  year: 2019
   date: "2019-10"
   title: "TRAK: A Testing Tool for Studying the Reliability of Data Delivery in Apache Kafka"
   authors: "Han Wu, Zhihao Shang, Katinka Wolter"
@@ -184,7 +200,8 @@
     doi: "https://ieeexplore.ieee.org/abstract/document/8990246"
     code: "https://github.com/woohan/kafka_start_up"
 
-- year: 2019
+- id: "kafka-performance-hpcc-2019"
+  year: 2019
   date: "2019-08"
   title: "Performance Prediction for the Apache Kafka Messaging System"
   authors: "Han Wu, Zhihao Shang, Katinka Wolter"

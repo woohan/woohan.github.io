@@ -12,7 +12,7 @@ description: "Latest updates, announcements, and highlights from CyberPUNK Lab."
   <section class="lab-news-list" aria-label="Lab news">
     {% assign visible_news = site.data.lab.news | where_exp: "item", "item.date >= '2025-01'" %}
     {% for item in visible_news %}
-      <article class="lab-news-row" id="news-{{ item.date }}-{{ forloop.index }}">
+      <article class="lab-news-row" id="news-{{ item.id }}">
         <time datetime="{{ item.date }}">
           <strong>{{ item.month }}</strong>
           <span>{{ item.date | slice: 0, 4 }}</span>

@@ -5,7 +5,7 @@
       <h2 id="publication-year-{{ year.name }}">{{ year.name }}</h2>
       <div class="lab-publication-list">
         {% for item in year.items %}
-          <article class="lab-publication-row">
+          <article class="lab-publication-row" id="publication-{{ item.id }}">
             <div class="lab-publication-row__content">
               <h3>{{ item.title }}</h3>
               <p>{{ item.authors }}</p>
