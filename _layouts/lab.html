@@ -21,7 +21,7 @@ layout: compress
         sessionStorage.setItem('cyberpunkLabVisited', '1');
       } catch (error) {}
     </script>
-    <link rel="stylesheet" href="{{ '/assets/lab/lab.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/lab/lab.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   <body class="lab-site">
     <a class="lab-skip-link" href="#lab-main">Skip to content</a>

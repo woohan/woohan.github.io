@@ -1,0 +1,30 @@
+{% assign publications_by_year = include.publications | group_by: "year" %}
+<div class="lab-publication-years">
+  {% for year in publications_by_year %}
+    <section class="lab-publication-year" aria-labelledby="publication-year-{{ year.name }}">
+      <h2 id="publication-year-{{ year.name }}">{{ year.name }}</h2>
+      <div class="lab-publication-list">
+        {% for item in year.items %}
+          <article class="lab-publication-row">
+            <div class="lab-publication-row__content">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.authors }}</p>
+              <span class="lab-publication-tags">
+                {% for tag in item.tags %}
+                  <small class="lab-publication-tag{% if tag contains "Honorable" or tag contains "Award" or tag contains "Spotlight" %} lab-publication-tag--note{% endif %}">{{ tag }}</small>
+                {% endfor %}
+              </span>
+            </div>
+            <img class="lab-publication-thumb" src="{{ item.image | relative_url }}" style="object-position: {{ item.image_position | default: 'center' }}" alt="Representative figure for {{ item.title }}" loading="lazy">
+            <div class="lab-publication-links" aria-label="Links for {{ item.title }}">
+              {% if item.links.pdf %}<a href="{{ item.links.pdf }}">PDF</a>{% endif %}
+              {% if item.links.doi %}<a href="{{ item.links.doi }}">DOI</a>{% endif %}
+              {% if item.links.code %}<a href="{{ item.links.code }}">Code</a>{% endif %}
+              {% if item.links.project %}<a href="{{ item.links.project }}">Project</a>{% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</div>

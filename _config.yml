@@ -126,6 +126,7 @@ include:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
+  - AGENTS.md
   - .asset-cache
   - .bundle
   - .jekyll-assets-cache
@@ -145,6 +146,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - scripts
   - tmp
   - vendor
 keep_files:

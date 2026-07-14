@@ -40,6 +40,10 @@ News
     <p>🎉 My PhD student Jiawei Wang's paper <em><a href="https://doi.org/10.1145/3805621.3807630" target="_blank">"Peeling the Layers of Privacy-Utility Onion on Tabular Data"</a></em> was accepted to the <a href="https://euromlsys.eu/#schedule" target="_blank"><strong>EuroMLSys Workshop</strong></a>, co-located with <strong>EuroSys 2026</strong>. Congratulations to Jiawei and all co-authors!</p>
   </article>
   <article class="news-card">
+    <time class="news-date">2026-01</time>
+    <p><a href="{{ site.baseurl }}/lab/team/">Hengyang Yao</a>, from the University of Birmingham, joined CyberPUNK Lab as a PhD student. Welcome!</p>
+  </article>
+  <article class="news-card">
     <time class="news-date">2025-11</time>
     <p>🎉 Our <a href="https://openreview.net/forum?id=ksau9IVXPj" target="_blank">paper</a> <em>"FedEvolve: Evolutionary Tabular Data Synthesis in Vertical Federated Learning Systems"</em> was accepted to the <a href="https://responsible-synthetic-data.github.io/" target="_blank">RSD Workshop @ AAAI 2026</a>. Congrats to Adethya Srinivasan - such an achievement for a 2nd year BSc student!</p>
   </article>

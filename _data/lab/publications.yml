@@ -146,3 +146,52 @@
   image_position: "62% 48%"
   links:
     doi: "https://ieeexplore.ieee.org/abstract/document/9382409"
+
+- year: 2020
+  date: "2020-10"
+  title: "A Reactive Batching Strategy of Apache Kafka for Reliable Stream Processing in Real-Time"
+  authors: "Han Wu, Zhihao Shang, Guang Peng, Katinka Wolter"
+  venue: "ISSRE 2020"
+  tags:
+    - "ISSRE 2020"
+  image: "/images/publications/issre20.jpg"
+  image_position: "center"
+  links:
+    doi: "https://ieeexplore.ieee.org/abstract/document/9251089"
+
+- year: 2020
+  date: "2020-06"
+  title: "Learning to Reliably Deliver Streaming Data with Apache Kafka"
+  authors: "Han Wu, Zhihao Shang, Katinka Wolter"
+  venue: "DSN 2020"
+  tags:
+    - "DSN 2020"
+  image: "/images/publications/dsn20.jpg"
+  image_position: "center"
+  links:
+    doi: "https://ieeexplore.ieee.org/abstract/document/9153457"
+
+- year: 2019
+  date: "2019-10"
+  title: "TRAK: A Testing Tool for Studying the Reliability of Data Delivery in Apache Kafka"
+  authors: "Han Wu, Zhihao Shang, Katinka Wolter"
+  venue: "ISSREW 2019"
+  tags:
+    - "ISSREW 2019"
+  image: "/images/publications/issrew19.jpg"
+  image_position: "center"
+  links:
+    doi: "https://ieeexplore.ieee.org/abstract/document/8990246"
+    code: "https://github.com/woohan/kafka_start_up"
+
+- year: 2019
+  date: "2019-08"
+  title: "Performance Prediction for the Apache Kafka Messaging System"
+  authors: "Han Wu, Zhihao Shang, Katinka Wolter"
+  venue: "IEEE HPCC 2019"
+  tags:
+    - "IEEE HPCC 2019"
+  image: "/images/publications/hpcc19.jpg"
+  image_position: "center"
+  links:
+    doi: "https://ieeexplore.ieee.org/abstract/document/8855525"

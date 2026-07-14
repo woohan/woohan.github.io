@@ -19,7 +19,7 @@
 
 
 
-<title>Markdown - Han’s Bonfire</title>
+<title>CyberPUNK Lab site workflow - Han’s Bonfire</title>
 
 
 
@@ -29,11 +29,11 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Han's Bonfire">
-<meta property="og:title" content="Markdown">
+<meta property="og:title" content="CyberPUNK Lab site workflow">
 
 
-  <link rel="canonical" href="http://localhost:4000/markdown/">
-  <meta property="og:url" content="http://localhost:4000/markdown/">
+  <link rel="canonical" href="http://localhost:4000/AGENCY/">
+  <meta property="og:url" content="http://localhost:4000/AGENCY/">
 
 
 
@@ -256,7 +256,7 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Markdown">
+    <meta itemprop="headline" content="CyberPUNK Lab site workflow">
     
     
     
@@ -264,7 +264,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Markdown
+          <h1 class="page__title" itemprop="headline">CyberPUNK Lab site workflow
 </h1>
           
         
@@ -278,277 +278,67 @@
       
 
       <section class="page__content" itemprop="text">
-        <h2 id="locations-of-key-filesdirectories">Locations of key files/directories</h2>
+        <h1 id="cyberpunk-lab-site-workflow">CyberPUNK Lab site workflow</h1>
 
-<ul>
-  <li>Basic config options: _config.yml</li>
-  <li>Top navigation bar config: _data/navigation.yml</li>
-  <li>Single pages: _pages/</li>
-  <li>Collections of pages are .md or .html files in:
-    <ul>
-      <li>_publications/</li>
-      <li>_portfolio/</li>
-      <li>_posts/</li>
-      <li>_teaching/</li>
-      <li>_talks/</li>
-    </ul>
-  </li>
-  <li>Footer: _includes/footer.html</li>
-  <li>Static files (like PDFs): /files/</li>
-  <li>Profile image (can set in _config.yml): images/profile.png</li>
-</ul>
+<p>This repository is the single source of truth for Han Wu’s website:</p>
 
-<h2 id="tips-and-hints">Tips and hints</h2>
+<p><code class="language-plaintext highlighter-rouge">/Users/hanwu/Library/CloudStorage/OneDrive-UniversityofSouthampton/SOTON/CodeX_workspace/01_workspaces/WEBSITES/han_homepage</code></p>
 
-<ul>
-  <li>Name a file “.md” to have it render in markdown, name it “.html” to render in HTML.</li>
-  <li>Go to the <a href="https://github.com/academicpages/academicpages.github.io/commits/master">commit list</a> (on your repo) to find the last version Github built with Jekyll.
-    <ul>
-      <li>Green check: successful build</li>
-      <li>Orange circle: building</li>
-      <li>Red X: error</li>
-      <li>No icon: not built</li>
-    </ul>
-  </li>
-</ul>
+<p>Do not maintain a separate deployment folder such as <code class="language-plaintext highlighter-rouge">/tmp/han-homepage-*</code>. Do not commit or push unless Han explicitly asks for that operation. When GitHub already has the correct live site, avoid overwriting it automatically.</p>
 
-<h2 id="resources">Resources</h2>
-<ul>
-  <li><a href="https://shopify.github.io/liquid/tags/control-flow/">Liquid syntax guide</a></li>
-</ul>
+<h2 id="low-resource-local-preview-template">Low-resource local preview template</h2>
 
-<h2 id="markdown-guide">Markdown guide</h2>
-
-<h3 id="header-three">Header three</h3>
-
-<h4 id="header-four">Header four</h4>
-
-<h5 id="header-five">Header five</h5>
-
-<h6 id="header-six">Header six</h6>
-
-<h2 id="blockquotes">Blockquotes</h2>
-
-<p>Single line blockquote:</p>
-
-<blockquote>
-  <p>Quotes are cool.</p>
-</blockquote>
-
-<h2 id="tables">Tables</h2>
-
-<h3 id="table-1">Table 1</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Entry</th>
-      <th>Item</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#">John Doe</a></td>
-      <td>2016</td>
-      <td>Description of the item in the list</td>
-    </tr>
-    <tr>
-      <td><a href="#">Jane Doe</a></td>
-      <td>2019</td>
-      <td>Description of the item in the list</td>
-    </tr>
-    <tr>
-      <td><a href="#">Doe Doe</a></td>
-      <td>2022</td>
-      <td>Description of the item in the list</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="table-2">Table 2</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Header1</th>
-      <th style="text-align: center">Header2</th>
-      <th style="text-align: right">Header3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">cell1</td>
-      <td style="text-align: center">cell2</td>
-      <td style="text-align: right">cell3</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">cell4</td>
-      <td style="text-align: center">cell5</td>
-      <td style="text-align: right">cell6</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td style="text-align: left">cell1</td>
-      <td style="text-align: center">cell2</td>
-      <td style="text-align: right">cell3</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">cell4</td>
-      <td style="text-align: center">cell5</td>
-      <td style="text-align: right">cell6</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td style="text-align: left">Foot1</td>
-      <td style="text-align: center">Foot2</td>
-      <td style="text-align: right">Foot3</td>
-    </tr>
-  </tfoot>
-</table>
-
-<h2 id="definition-lists">Definition Lists</h2>
-
-<dl>
-  <dt>Definition List Title</dt>
-  <dd>Definition list division.</dd>
-  <dt>Startup</dt>
-  <dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
-  <dt>#dowork</dt>
-  <dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
-  <dt>Do It Live</dt>
-  <dd>I’ll let Bill O’Reilly <a href="https://www.youtube.com/watch?v=O_HyZ5aW76c" title="We'll Do It Live">explain</a> this one.</dd>
-</dl>
-
-<h2 id="unordered-lists-nested">Unordered Lists (Nested)</h2>
-
-<ul>
-  <li>List item one
-    <ul>
-      <li>List item one
-        <ul>
-          <li>List item one</li>
-          <li>List item two</li>
-          <li>List item three</li>
-          <li>List item four</li>
-        </ul>
-      </li>
-      <li>List item two</li>
-      <li>List item three</li>
-      <li>List item four</li>
-    </ul>
-  </li>
-  <li>List item two</li>
-  <li>List item three</li>
-  <li>List item four</li>
-</ul>
-
-<h2 id="ordered-list-nested">Ordered List (Nested)</h2>
+<p>Use this workflow when Codex is editing the lab website and the Mac feels slow, or when the Ruby/Jekyll environment is missing dependencies.</p>
 
 <ol>
-  <li>List item one
-    <ol>
-      <li>List item one
-        <ol>
-          <li>List item one</li>
-          <li>List item two</li>
-          <li>List item three</li>
-          <li>List item four</li>
-        </ol>
-      </li>
-      <li>List item two</li>
-      <li>List item three</li>
-      <li>List item four</li>
-    </ol>
+  <li>Edit source files in this repository first.
+    <ul>
+      <li>Lab CSS: <code class="language-plaintext highlighter-rouge">assets/lab/lab.css</code></li>
+      <li>Lab layout: <code class="language-plaintext highlighter-rouge">_layouts/lab.html</code></li>
+      <li>Lab data: <code class="language-plaintext highlighter-rouge">_data/lab/</code></li>
+      <li>Lab pages: <code class="language-plaintext highlighter-rouge">lab/</code></li>
+    </ul>
   </li>
-  <li>List item two</li>
-  <li>List item three</li>
-  <li>List item four</li>
+  <li>
+    <p>Prefer the full Jekyll server only when dependencies are already healthy:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--config</span> _config.yml,_config.dev.yml <span class="nt">--host</span> 127.0.0.1 <span class="nt">--port</span> 4000 <span class="nt">--no-watch</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If Jekyll fails because a gem is missing, do not automatically run <code class="language-plaintext highlighter-rouge">bundle install</code>. Ask first. For a lightweight preview, serve the already-built <code class="language-plaintext highlighter-rouge">_site</code> folder instead:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>_site
+python3 <span class="nt">-m</span> http.server 4000 <span class="nt">--bind</span> 127.0.0.1
+</code></pre></div>    </div>
+  </li>
+  <li>When using the static <code class="language-plaintext highlighter-rouge">_site</code> preview, remember that <code class="language-plaintext highlighter-rouge">_site</code> is generated preview output, not the authoritative source.
+    <ul>
+      <li>For CSS-only changes, mirror <code class="language-plaintext highlighter-rouge">assets/lab/lab.css</code> to <code class="language-plaintext highlighter-rouge">_site/assets/lab/lab.css</code> only so the running static preview updates.</li>
+      <li>For layout-only changes that must be previewed before rebuilding, mirror only the minimal rendered HTML snippet into <code class="language-plaintext highlighter-rouge">_site/lab/.../index.html</code>.</li>
+      <li>Keep the source files as the version Han should maintain.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Verify the preview with:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-I</span> http://127.0.0.1:4000/lab/
+</code></pre></div>    </div>
+  </li>
+  <li>If the browser still shows old content, hard refresh the in-app browser. Static preview changes do not need a server restart if the served files changed.</li>
 </ol>
 
-<h2 id="buttons">Buttons</h2>
+<h2 id="performance-rules">Performance rules</h2>
 
-<p>Make any link standout more when applying the <code class="language-plaintext highlighter-rouge">.btn</code> class.</p>
+<ul>
+  <li>Prefer static preview from <code class="language-plaintext highlighter-rouge">_site</code> when the machine is under load.</li>
+  <li>Avoid looped visual effects unless Han explicitly asks for them.</li>
+  <li>For UI animations, prefer <code class="language-plaintext highlighter-rouge">transform</code>, <code class="language-plaintext highlighter-rouge">opacity</code>, and short one-shot transitions.</li>
+  <li>Respect <code class="language-plaintext highlighter-rouge">prefers-reduced-motion</code>.</li>
+  <li>Do not make system-level changes while diagnosing performance.</li>
+  <li>If port <code class="language-plaintext highlighter-rouge">4000</code> is occupied, inspect the process first; do not kill unrelated processes.</li>
+</ul>
 
-<h2 id="notices">Notices</h2>
-
-<p class="notice"><strong>Watch out!</strong> You can also add notices by appending <code class="language-plaintext highlighter-rouge">{: .notice}</code> to a paragraph.</p>
-
-<h2 id="html-tags">HTML Tags</h2>
-
-<h3 id="address-tag">Address Tag</h3>
-
-<address>
-  1 Infinite Loop<br /> Cupertino, CA 95014<br /> United States
-</address>
-
-<h3 id="anchor-tag-aka-link">Anchor Tag (aka. Link)</h3>
-
-<p>This is an example of a <a href="http://github.com" title="Github">link</a>.</p>
-
-<h3 id="abbreviation-tag">Abbreviation Tag</h3>
-
-<p>The abbreviation <abbr title="Cascading Style Sheets">CSS</abbr> stands for “Cascading Style Sheets”.</p>
-
-<h3 id="cite-tag">Cite Tag</h3>
-
-<p>“Code is poetry.” —<cite>Automattic</cite></p>
-
-<h3 id="code-tag">Code Tag</h3>
-
-<p>You will learn later on in these tests that <code class="language-plaintext highlighter-rouge">word-wrap: break-word;</code> will be your best friend.</p>
-
-<h3 id="strike-tag">Strike Tag</h3>
-
-<p>This tag will let you <strike>strikeout text</strike>.</p>
-
-<h3 id="emphasize-tag">Emphasize Tag</h3>
-
-<p>The emphasize tag should <em>italicize</em> text.</p>
-
-<h3 id="insert-tag">Insert Tag</h3>
-
-<p>This tag should denote <ins>inserted</ins> text.</p>
-
-<h3 id="keyboard-tag">Keyboard Tag</h3>
-
-<p>This scarcely known tag emulates <kbd>keyboard text</kbd>, which is usually styled like the <code class="language-plaintext highlighter-rouge">&lt;code&gt;</code> tag.</p>
-
-<h3 id="preformatted-tag">Preformatted Tag</h3>
-
-<p>This tag styles large blocks of code.</p>
-
-<pre>
-.post-title {
-  margin: 0 0 5px;
-  font-weight: bold;
-  font-size: 38px;
-  line-height: 1.2;
-  and here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
-}
-</pre>
-
-<h3 id="quote-tag">Quote Tag</h3>
-
-<p><q>Developers, developers, developers…</q> –Steve Ballmer</p>
-
-<h3 id="strong-tag">Strong Tag</h3>
-
-<p>This tag shows <strong>bold text</strong>.</p>
-
-<h3 id="subscript-tag">Subscript Tag</h3>
-
-<p>Getting our science styling on with H<sub>2</sub>O, which should push the “2” down.</p>
-
-<h3 id="superscript-tag">Superscript Tag</h3>
-
-<p>Still sticking with science and Isaac Newton’s E = MC<sup>2</sup>, which should lift the 2 up.</p>
-
-<h3 id="variable-tag">Variable Tag</h3>
-
-<p>This allows you to denote <var>variables</var>.</p>
 
         
       </section>

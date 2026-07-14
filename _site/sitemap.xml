@@ -118,7 +118,14 @@
 <loc>http://localhost:4000/year-archive/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/AGENCY/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/markdown_generator/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/files/Han_CV_EN_2026.pdf</loc>
+<lastmod>2026-07-03T05:06:24-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/files/paper1.pdf</loc>

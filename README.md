@@ -5,6 +5,18 @@
 
 Academic Pages is a Github Pages template for academic websites.
 
+## Quick local preview
+
+From the repository root, run:
+
+```bash
+./scripts/serve-local.sh
+```
+
+Then open <http://localhost:4000/>. LiveReload is enabled, so saved changes are rebuilt and refreshed automatically.
+
+The script uses the Ruby version pinned in `.ruby-version`, installs missing gems when necessary, and starts Jekyll with the repository's locked dependencies. Press `Ctrl-C` to stop the server.
+
 
 # Getting Started
 
@@ -20,12 +32,12 @@ See more info at https://academicpages.github.io/
 
 ## Running Locally
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+The recommended workflow is the [quick local preview](#quick-local-preview) command above. For a first-time manual setup, you will need to:
 
 1. Clone the repository and made updates as detailed above.
 1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
 1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+1. Run `bundle exec jekyll serve -l` to generate the HTML and serve it from `localhost:4000`; the local server will automatically rebuild and refresh the pages on change.
 
 
 # Maintenance 
