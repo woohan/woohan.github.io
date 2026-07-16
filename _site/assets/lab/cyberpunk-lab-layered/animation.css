@@ -1,0 +1,11 @@
+.cyber-scene { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background:#020a12; }
+.cyber-scene .layer { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+.cyber-scene .neon { animation: neon-flicker 5.2s steps(1,end) infinite; will-change:opacity,filter; }
+.cyber-scene .punk { animation-delay:-2.1s; }
+.cyber-scene .lab { animation-delay:-3.7s; }
+.cyber-scene .rain { mix-blend-mode:screen; opacity:.36; animation:rain-drift 1.3s linear infinite; }
+.cyber-scene .searchlights { animation:drone-drift 7s ease-in-out infinite alternate; }
+@keyframes neon-flicker { 0%,18%,22%,24%,53%,55%,100%{opacity:1;filter:brightness(1)} 19%,23%,54%{opacity:.42;filter:brightness(.7)} 20%{opacity:.12} }
+@keyframes rain-drift { from{transform:translate3d(0,-12px,0)} to{transform:translate3d(-3px,18px,0)} }
+@keyframes drone-drift { from{transform:translate3d(-3px,0,0);opacity:.72} to{transform:translate3d(5px,2px,0);opacity:1} }
+@media (prefers-reduced-motion: reduce) { .cyber-scene .layer { animation:none !important; } }

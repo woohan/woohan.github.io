@@ -49,7 +49,7 @@ class LabSiteTest < Minitest::Test
   def test_homepage_uses_the_prepared_hero_and_five_item_limits
     homepage = source("_pages/lab/index.html")
 
-    assert_includes homepage, "homepage-background-title.png"
+    assert_includes homepage, "01_base_clean.png"
     assert_equal 2, homepage.scan("limit: 5").length
     %w[news publications team opportunities].each do |name|
       assert_includes homepage, "site.data.lab.#{name}"
@@ -292,52 +292,91 @@ class LabSiteTest < Minitest::Test
     assert_match(/\.lab-site \.lab-home-grid__side\s*\{[^}]*grid-template-rows:\s*auto auto;[^}]*align-content:\s*start;/m, css)
   end
 
-  def test_updated_background_runs_once_continuously_behind_hero_and_panels
+  def test_homepage_uses_the_layer_manifest_order_and_loads_the_scene_controller
     css = source("assets/lab/lab.css")
     homepage = source("_pages/lab/index.html")
     layout = source("_layouts/lab.html")
-    prepared_asset = ROOT.join("plan_lab_materials/homepage_background_title.png")
-    published_asset = ROOT.join("assets/lab/homepage-background-title.png")
+    layer_files = %w[
+      01_base_clean.png
+      02_building_facade_clean.png
+      03_sign_cyber_clean.png
+      04_sign_punk_clean.png
+      05_sign_lab_clean.png
+      06_drones_searchlights.png
+      07_rain_fog_overlay.png
+      09_other_illuminated_signs_overlay.png
+      08_foreground_rooftop_person_clean.png
+    ]
 
-    assert File.exist?(published_asset), "published homepage background should exist"
-    if File.exist?(prepared_asset)
-      assert_equal Digest::SHA256.file(prepared_asset).hexdigest,
-                   Digest::SHA256.file(published_asset).hexdigest
+    layer_files.each do |filename|
+      assert File.exist?(ROOT.join("assets/lab/cyberpunk-lab-layered", filename))
     end
-    assert_equal 1, homepage.scan("homepage-background-title.png").length
+    positions = layer_files.map { |filename| homepage.index(filename) }
+    assert_equal positions.sort, positions, "layers should follow manifest stack order"
     assert_includes layout, "{% if page.lab_page == 'home' %}"
-    assert_includes layout, '<link rel="preload" as="image" href="{{ \'/assets/lab/homepage-background-title.png\' | relative_url }}" fetchpriority="high">'
+    assert_includes layout, "01_base_clean.png"
+    assert_includes layout, "assets/lab/lab-home-hero.js"
     assert_includes homepage, 'class="lab-home-stage"'
-    assert_includes homepage, '<div class="lab-home-backdrop" aria-hidden="true"></div>'
-    assert_includes homepage, "style=\"--lab-home-bg: url('{{ '/assets/lab/homepage-background-title.png' | relative_url }}')\""
-    assert_match(/\.lab-site \.lab-home-stage\s*\{[^}]*--lab-header-drop-offset:\s*86px;[^}]*animation:\s*lab-stage-settle 816ms var\(--lab-enter-ease\) both;/m, css)
-    assert_match(/\.lab-site \.lab-home-backdrop\s*\{[^}]*position:\s*absolute;[^}]*inset:\s*0;[^}]*z-index:\s*0;[^}]*background-image:\s*var\(--lab-home-bg\);[^}]*background-position:\s*center top;[^}]*background-size:\s*100% auto;[^}]*transform-origin:\s*top center;[^}]*animation:\s*lab-hero-zoom-out 816ms var\(--lab-enter-ease\) both;/m, css)
+    assert_includes homepage, 'data-lab-cyber-scene'
+    assert_equal 9, homepage.scan('class="lab-scene-layer ').length
+    assert_equal 9, homepage.scan('width="3840" height="2160"').length
+    assert_equal 1, homepage.scan('data-depth="4"').length
+    refute_includes homepage, "data-parallax-lock"
+    %w[6 9 10 8 12].each { |depth| assert_includes homepage, %(data-depth="#{depth}") }
+    assert_equal 4, homepage.scan('data-depth="6"').length
+    assert_includes homepage, 'class="lab-scene-facade"'
+    assert_equal 1, homepage.scan('data-depth="10" data-ambient="rain"').length
+    assert_includes homepage, 'class="lab-scene-layer lab-scene-layer--drones"'
+    refute_includes homepage, 'lab-scene-layer--screen lab-scene-layer--drones'
+    assert_includes homepage, 'lab-scene-layer--screen lab-scene-layer--rain'
+    assert_includes homepage, 'lab-scene-layer--screen lab-scene-layer--glow'
+    assert_match(/\.lab-site \.lab-home-stage\s*\{[^}]*--lab-header-drop-offset:\s*86px;[^}]*--lab-key-layer-delay:\s*0\.36s;[^}]*animation:\s*lab-stage-settle 816ms var\(--lab-enter-ease\) both;/m, css)
+    assert_match(/\.lab-site \.lab-home-backdrop\s*\{[^}]*position:\s*absolute;[^}]*aspect-ratio:\s*16 \/ 9;[^}]*overflow:\s*hidden;[^}]*pointer-events:\s*none;/m, css)
     assert_match(/@keyframes lab-stage-settle\s*\{[\s\S]*?0%\s*\{[^}]*transform:\s*translate3d\(0, calc\(-1 \* var\(--lab-header-drop-offset\)\), 0\);[^}]*\}[\s\S]*?100%\s*\{[^}]*transform:\s*translate3d\(0, 0, 0\);/m, css)
-    assert_match(/@keyframes lab-hero-zoom-out\s*\{[\s\S]*?0%\s*\{[^}]*transform:\s*scale\(1\.08\);[^}]*\}[\s\S]*?100%\s*\{[^}]*transform:\s*scale\(1\);/m, css)
+    assert_match(/\.lab-site \.lab-cyber-scene\s*\{[^}]*transform-origin:\s*64% 46%;[^}]*animation:\s*lab-scene-camera-zoom 1\.65s cubic-bezier\(0\.38, 0\.04, 0\.56, 0\.82\)/m, css)
+    assert_match(/@keyframes lab-scene-camera-zoom\s*\{[\s\S]*?0%\s*\{[^}]*transform:\s*scale\(1\.82\);[^}]*\}[\s\S]*?100%\s*\{[^}]*transform:\s*scale\(1\);/m, css)
+    assert_match(/\.lab-site \.lab-scene-layer--building\s*\{[^}]*mask-image:\s*linear-gradient\([^}]*#000 36%[^}]*transparent 49%/m, css)
+    assert_match(/\.lab-site \.lab-scene-layer--drones\s*\{[^}]*animation-delay:\s*320ms;[^}]*animation-duration:\s*820ms;/m, css)
+    assert_match(/\.lab-site \.lab-scene-layer--glow\s*\{[^}]*animation-delay:\s*var\(--lab-key-layer-delay\);/m, css)
+    assert_match(/\.lab-site \.lab-scene-layer--neon\s*\{[^}]*animation-delay:\s*var\(--lab-key-layer-delay\);[^}]*animation-duration:\s*820ms;/m, css)
+    assert_match(/\.lab-site \.lab-scene-facade\s*\{[^}]*animation:\s*lab-facade-emerge 860ms var\(--lab-enter-ease\) var\(--lab-key-layer-delay\) both;/m, css)
+    foreground_css = css.match(/\.lab-site \.lab-scene-layer--foreground\s*\{[^}]*\}/m).to_s
+    assert_includes foreground_css, "animation-delay: var(--lab-key-layer-delay);"
+    assert_includes foreground_css, "animation-duration: 900ms;"
+    refute_includes foreground_css, "mask-image"
     assert_match(/\.lab-site \.lab-hero\s*\{[^}]*height:\s*clamp\(300px, 40vw, 635px\);/m, css)
     panels_css = css.match(/\.lab-site \.lab-home-panels\s*\{[^}]*\}/m).to_s
     assert_includes panels_css, "background: transparent;"
     refute_includes panels_css, "background-image"
     assert_match(/@media \(max-width: 900px\)[\s\S]+?\.lab-site \.lab-home-stage\s*\{[^}]*--lab-header-drop-offset:\s*150px;/m, css)
-    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-home-stage\s*\{[^}]*--lab-header-drop-offset:\s*165px;[^}]*\}[\s\S]+?\.lab-site \.lab-home-backdrop\s*\{[^}]*background-position:\s*left top;[^}]*background-size:\s*auto 450px;[^}]*\}[\s\S]+?\.lab-site \.lab-hero\s*\{[^}]*height:\s*290px;/m, css)
+    assert_match(/@media \(max-width: 720px\)[\s\S]+?\.lab-site \.lab-home-stage\s*\{[^}]*--lab-header-drop-offset:\s*165px;[^}]*\}[\s\S]+?\.lab-site \.lab-home-backdrop\s*\{[^}]*left:\s*-124px;[^}]*width:\s*800px;[^}]*height:\s*450px;[^}]*\}[\s\S]+?\.lab-site \.lab-hero\s*\{[^}]*height:\s*290px;/m, css)
   end
 
-  def test_homepage_background_uses_only_the_prepared_static_image_without_rain
+  def test_homepage_scene_has_realtime_motion_flicker_and_reduced_motion_support
     css = source("assets/lab/lab.css")
+    javascript = source("assets/lab/lab-home-hero.js")
     stage = css.match(/\.lab-site \.lab-home-stage\s*\{[^}]*\}/m).to_s
 
     assert_includes stage, "position: relative;"
     assert_includes stage, "isolation: isolate;"
     assert_includes stage, "overflow: hidden;"
     assert_includes stage, "contain: paint;"
-    assert_match(/\.lab-site \.lab-home-backdrop\s*\{[^}]*background-image:\s*var\(--lab-home-bg\);/m, css)
-    refute_match(/\.lab-site \.lab-home-stage::before\s*\{/, css)
-    refute_match(/@keyframes lab-rain-(?:fall|drift)/, css)
-    refute_match(/\.lab-site \.lab-home-stage::before\s*\{[^}]*animation:/m, css)
-    refute_includes css, "repeating-linear-gradient(105deg"
+    assert_match(/\.lab-site \.lab-scene-layer--screen\s*\{[^}]*mix-blend-mode:\s*screen;/m, css)
+    assert_match(/\.lab-site \.lab-scene-layer--drones\s*\{[^}]*mix-blend-mode:\s*normal;/m, css)
+    assert_match(/\.lab-site \.lab-scene-layer__image\s*\{[^}]*object-fit:\s*contain;[^}]*scale\(1\.05\);/m, css)
+    assert_includes javascript, "window.requestAnimationFrame(renderFrame)"
+    assert_includes javascript, "window.cancelAnimationFrame(frameId)"
+    assert_includes javascript, "if (isMobile && now - lastRenderAt < 48)"
+    assert_includes javascript, "const amplitude = isMobile ? 0.5 : 2.15;"
+    assert_includes javascript, "const layerScale = isMobile ? 1.055 : 1.075;"
+    refute_includes javascript, "parallaxLock"
+    assert_includes javascript, "layer.ambient === 'drones'"
+    assert_includes javascript, "DeviceOrientationEvent.requestPermission()"
+    assert_includes javascript, "image.classList.toggle('is-neon-dim')"
+    assert_includes javascript, "window.addEventListener('pagehide', destroy"
+    assert_match(/@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.lab-site \.lab-scene-layer\s*\{[^}]*animation:\s*lab-layer-fade-in 420ms ease-out forwards !important;/m, css)
     assert_match(/\.lab-site \.lab-hero\s*\{[^}]*position:\s*relative;[^}]*z-index:\s*1;/m, css)
     assert_match(/\.lab-site \.lab-home-panels\s*\{[^}]*position:\s*relative;[^}]*z-index:\s*1;/m, css)
-    refute_includes css, "<canvas"
   end
 
   def test_homepage_modules_have_muted_screen_bezels_without_a_black_ring
@@ -392,12 +431,13 @@ class LabSiteTest < Minitest::Test
 
   def test_homepage_panels_do_not_use_scan_or_flicker_variables
     css = source("assets/lab/lab.css")
+    screen = css.match(/\.lab-site \.lab-screen\s*\{[^}]*\}/m).to_s
 
     refute_includes css, "--scan-duration"
     refute_includes css, "--scan-delay"
     refute_includes css, "--flicker-duration"
     refute_includes css, "--flicker-delay"
-    refute_includes css, "will-change: transform"
+    refute_includes screen, "will-change: transform"
   end
 
   def test_homepage_module_icons_and_titles_are_larger

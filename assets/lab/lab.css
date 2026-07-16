@@ -277,6 +277,7 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
 
 .lab-site .lab-home-stage {
   --lab-header-drop-offset: 86px;
+  --lab-key-layer-delay: 0.36s;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -287,14 +288,142 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
 
 .lab-site .lab-home-backdrop {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: 0;
-  background-image: var(--lab-home-bg);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  transform-origin: top center;
-  animation: lab-hero-zoom-out 816ms var(--lab-enter-ease) both;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #020a12;
+  pointer-events: none;
+}
+
+.lab-site .lab-cyber-scene,
+.lab-site .lab-scene-facade,
+.lab-site .lab-scene-layer,
+.lab-site .lab-scene-layer__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lab-site .lab-cyber-scene {
+  overflow: hidden;
+  transform-origin: 64% 46%;
+  will-change: transform;
+  animation: lab-scene-camera-zoom 1.65s cubic-bezier(0.38, 0.04, 0.56, 0.82) both;
+}
+
+.lab-site .lab-scene-facade {
+  opacity: 0;
+  transform-origin: 22% 50%;
+  will-change: transform, opacity;
+  animation: lab-facade-emerge 860ms var(--lab-enter-ease) var(--lab-key-layer-delay) both;
+}
+
+.lab-site .lab-scene-layer {
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: lab-layer-depth-reveal 1.18s var(--lab-enter-ease) forwards;
+}
+
+.lab-site .lab-scene-layer__image {
+  max-width: none;
+  object-fit: contain;
+  transform: translate3d(0, 0, 0) scale(1.05);
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+}
+
+.lab-site .lab-scene-layer--base {
+  animation-name: lab-layer-base-reveal;
+  animation-delay: 0ms;
+  animation-duration: 520ms;
+}
+
+.lab-site .lab-scene-layer--building {
+  opacity: 1;
+  animation: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 36%,
+    rgba(0, 0, 0, 0.92) 39%,
+    rgba(0, 0, 0, 0.5) 43%,
+    rgba(0, 0, 0, 0.16) 46%,
+    transparent 49%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 36%,
+    rgba(0, 0, 0, 0.92) 39%,
+    rgba(0, 0, 0, 0.5) 43%,
+    rgba(0, 0, 0, 0.16) 46%,
+    transparent 49%
+  );
+}
+
+.lab-site .lab-scene-layer--neon {
+  animation-name: lab-layer-neon-reveal;
+  animation-delay: var(--lab-key-layer-delay);
+  animation-duration: 820ms;
+}
+
+.lab-site .lab-scene-layer--punk {
+  animation-delay: var(--lab-key-layer-delay);
+}
+
+.lab-site .lab-scene-layer--lab {
+  animation-delay: var(--lab-key-layer-delay);
+}
+
+.lab-site .lab-scene-layer--drones {
+  animation-name: lab-layer-drones-reveal;
+  animation-delay: 320ms;
+  animation-duration: 820ms;
+  mix-blend-mode: normal;
+}
+
+.lab-site .lab-scene-layer--rain,
+.lab-site .lab-scene-layer--glow {
+  animation-name: lab-layer-signs-reveal;
+  animation-delay: var(--lab-key-layer-delay);
+  animation-duration: 1s;
+}
+
+.lab-site .lab-scene-layer--glow {
+  animation-delay: var(--lab-key-layer-delay);
+}
+
+.lab-site .lab-scene-layer--foreground {
+  animation-name: lab-layer-foreground-reveal;
+  animation-delay: var(--lab-key-layer-delay);
+  animation-duration: 900ms;
+}
+
+.lab-site .lab-scene-layer--screen {
+  mix-blend-mode: screen;
+}
+
+.lab-site .lab-scene-layer--rain .lab-scene-layer__image {
+  opacity: 0.46;
+}
+
+.lab-site .lab-scene-layer--glow .lab-scene-layer__image {
+  opacity: 0.56;
+}
+
+.lab-site .lab-scene-layer--neon .lab-scene-layer__image {
+  transition: opacity 42ms linear, filter 42ms linear;
+}
+
+.lab-site .lab-scene-layer--neon .lab-scene-layer__image.is-neon-dim {
+  opacity: 0.2;
+  filter: brightness(0.58) saturate(0.72);
 }
 
 @keyframes lab-stage-settle {
@@ -307,14 +436,58 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
   }
 }
 
-@keyframes lab-hero-zoom-out {
+@keyframes lab-scene-camera-zoom {
   0% {
-    transform: scale(1.08);
+    transform: scale(1.82);
   }
 
   100% {
     transform: scale(1);
   }
+}
+
+@keyframes lab-layer-base-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lab-facade-emerge {
+  0% { opacity: 0; transform: scale(1.08); filter: brightness(0.72) saturate(0.82); }
+  58% { opacity: 1; filter: brightness(1.05) saturate(1.08); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1) saturate(1); }
+}
+
+@keyframes lab-layer-depth-reveal {
+  from { opacity: 0; transform: scale(1.035); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes lab-layer-drones-reveal {
+  0% { opacity: 0; transform: scale(1.06); filter: brightness(0.64); }
+  64% { opacity: 0.92; filter: brightness(1.2); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes lab-layer-signs-reveal {
+  0% { opacity: 0; transform: scale(1.045); filter: brightness(0.48) saturate(0.76); }
+  62% { opacity: 0.76; filter: brightness(1.18) saturate(1.12); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1) saturate(1); }
+}
+
+@keyframes lab-layer-neon-reveal {
+  0% { opacity: 0; transform: scale(1.025); filter: brightness(0.35) saturate(0.86); }
+  72% { opacity: 1; filter: brightness(1.28) saturate(1.15); }
+  100% { opacity: 1; transform: none; filter: brightness(1); }
+}
+
+@keyframes lab-layer-foreground-reveal {
+  0% { opacity: 0; transform: scale(1.065); filter: brightness(0.72); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes lab-layer-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .lab-site .lab-hero {
@@ -700,6 +873,7 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
   font-size: 0.95rem;
   font-weight: 800;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .lab-site .lab-home-news span,
@@ -1928,8 +2102,11 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
   }
 
   .lab-site .lab-home-backdrop {
-    background-position: left top;
-    background-size: auto 450px;
+    left: -124px;
+    right: auto;
+    width: 800px;
+    height: 450px;
+    aspect-ratio: auto;
   }
 
   .lab-site .lab-hero {
@@ -1966,7 +2143,8 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
 
   .lab-site .lab-home-news,
   .lab-site .lab-home-publication {
-    grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+    grid-template-columns: 4.75rem minmax(0, 1fr) auto;
+    gap: 0.5rem;
   }
 
   .lab-site .lab-subpage {
@@ -2278,11 +2456,37 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
   .lab-site .lab-header,
   .lab-site .lab-home-stage,
   .lab-site .lab-home-backdrop,
+  .lab-site .lab-cyber-scene,
   .lab-site .lab-home-panels .lab-screen,
-  .lab-site .lab-subpage,
+  .lab-site .lab-subpage {
+    animation: none !important;
+  }
+
   .lab-site .lab-mobile-nav__menu,
   .lab-site .lab-mobile-nav__menu a {
     animation: none !important;
+  }
+
+  .lab-site .lab-scene-layer {
+    opacity: 0;
+    transform: none !important;
+    filter: none !important;
+    animation: lab-layer-fade-in 420ms ease-out forwards !important;
+  }
+
+  .lab-site .lab-scene-facade {
+    transform: none !important;
+    animation: lab-layer-fade-in 420ms ease-out forwards !important;
+  }
+
+  .lab-site .lab-cyber-scene {
+    transform: none !important;
+  }
+
+  .lab-site .lab-scene-layer__image {
+    transform: translate3d(0, 0, 0) scale(1.05) !important;
+    filter: none !important;
+    transition: none !important;
   }
 
   .lab-site .lab-subpage .lab-news-row,

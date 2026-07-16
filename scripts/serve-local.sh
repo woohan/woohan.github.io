@@ -6,15 +6,19 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
 if command -v rbenv >/dev/null 2>&1; then
-  ruby_command=(rbenv exec)
+  run_ruby() { rbenv exec "$@"; }
 else
-  ruby_command=()
+  run_ruby() { "$@"; }
 fi
 
-if ! "${ruby_command[@]}" bundle check >/dev/null 2>&1; then
+if ! run_ruby bundle check >/dev/null 2>&1; then
   echo "Installing missing Ruby dependencies..."
-  "${ruby_command[@]}" bundle install
+  run_ruby bundle install
 fi
 
 echo "Starting the site at http://localhost:4000/"
-exec "${ruby_command[@]}" bundle exec jekyll serve -l "$@"
+if command -v rbenv >/dev/null 2>&1; then
+  exec rbenv exec bundle exec jekyll serve --config _config.yml,_config.dev.yml -l "$@"
+else
+  exec bundle exec jekyll serve --config _config.yml,_config.dev.yml -l "$@"
+fi

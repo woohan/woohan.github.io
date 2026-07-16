@@ -1,0 +1,125 @@
+{
+  "source_dimensions": [
+    1586,
+    992
+  ],
+  "extended_dimensions": [
+    3840,
+    2160
+  ],
+  "logical_pre_upscale_dimensions": [
+    1920,
+    1080
+  ],
+  "source_offset_on_logical_canvas": [
+    167,
+    44
+  ],
+  "source_offset_on_4k_canvas": [
+    334,
+    88
+  ],
+  "source_rendered_dimensions_on_4k_canvas": [
+    3172,
+    1984
+  ],
+  "source_sha256": "f346d6c7e7f2e2472bd9d6afe05289603572fa6758d0120339aec52ed6fd2830",
+  "canonical_preview_center_max_channel_delta": 0,
+  "canonical_preview_center_mean_absolute_delta": 0.0,
+  "canonical_preview_center_pixel_exact": true,
+  "all_layers_dimensions": [
+    3840,
+    2160
+  ],
+  "all_layers_have_alpha": true,
+  "edge_matte_stats": {
+    "02_building_structure.png": {
+      "nonzero_pixels": 2238023,
+      "partial_alpha_pixels": 54860,
+      "opaque_pixels": 2183163,
+      "alpha_bbox": [
+        329,
+        83,
+        1756,
+        1808
+      ]
+    },
+    "03_sign_cyber.png": {
+      "nonzero_pixels": 453442,
+      "partial_alpha_pixels": 333515,
+      "opaque_pixels": 119927,
+      "alpha_bbox": [
+        716,
+        150,
+        1562,
+        716
+      ]
+    },
+    "04_sign_punk.png": {
+      "nonzero_pixels": 363780,
+      "partial_alpha_pixels": 250109,
+      "opaque_pixels": 113671,
+      "alpha_bbox": [
+        706,
+        520,
+        1532,
+        1096
+      ]
+    },
+    "05_sign_lab.png": {
+      "nonzero_pixels": 316540,
+      "partial_alpha_pixels": 236428,
+      "opaque_pixels": 80112,
+      "alpha_bbox": [
+        710,
+        960,
+        1492,
+        1416
+      ]
+    },
+    "06_drones_searchlights.png": {
+      "nonzero_pixels": 129753,
+      "partial_alpha_pixels": 127232,
+      "opaque_pixels": 2521,
+      "alpha_bbox": [
+        2298,
+        321,
+        2670,
+        1104
+      ]
+    },
+    "07_rain_fog_overlay.png": {
+      "nonzero_pixels": 2454905,
+      "partial_alpha_pixels": 2454905,
+      "opaque_pixels": 0,
+      "alpha_bbox": [
+        330,
+        84,
+        3507,
+        1544
+      ]
+    },
+    "08_foreground_rooftop_person.png": {
+      "nonzero_pixels": 2023695,
+      "partial_alpha_pixels": 62913,
+      "opaque_pixels": 1960782,
+      "alpha_bbox": [
+        329,
+        1230,
+        3511,
+        2077
+      ]
+    },
+    "09_other_illuminated_signs_overlay.png": {
+      "nonzero_pixels": 324389,
+      "partial_alpha_pixels": 300391,
+      "opaque_pixels": 23998,
+      "alpha_bbox": [
+        1670,
+        374,
+        3378,
+        1238
+      ]
+    }
+  }
+}

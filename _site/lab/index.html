@@ -8,7 +8,7 @@
     <title>Home · CyberPUNK Lab</title>
     <link rel="icon" href="/images/favicon.ico">
     
-      <link rel="preload" as="image" href="/assets/lab/homepage-background-title.png" fetchpriority="high">
+      <link rel="preload" as="image" href="/assets/lab/cyberpunk-lab-layered/01_base_clean.png" fetchpriority="high">
     
     <script>
       let savedTheme = null;
@@ -32,7 +32,7 @@
         sessionStorage.setItem('cyberpunkLabVisited', '1');
       } catch (error) {}
     </script>
-    <link rel="stylesheet" href="/assets/lab/lab.css?v=1784042750">
+    <link rel="stylesheet" href="/assets/lab/lab.css?v=1784197988">
   </head>
   <body class="lab-site">
     <a class="lab-skip-link" href="#lab-main">Skip to content</a>
@@ -101,8 +101,40 @@
 </header>
 
     <main id="lab-main">
-      <div class="lab-home-stage" style="--lab-home-bg: url('/assets/lab/homepage-background-title.png')">
-  <div class="lab-home-backdrop" aria-hidden="true"></div>
+      <div class="lab-home-stage">
+  <div class="lab-home-backdrop" data-lab-cyber-scene aria-hidden="true">
+    <div class="lab-cyber-scene">
+      <div class="lab-scene-layer lab-scene-layer--base" data-depth="4">
+        <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/01_base_clean.png" width="3840" height="2160" alt="" fetchpriority="high" decoding="async">
+      </div>
+      <div class="lab-scene-facade">
+        <div class="lab-scene-layer lab-scene-layer--building" data-depth="6">
+          <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/02_building_facade_clean.png" width="3840" height="2160" alt="" decoding="async">
+        </div>
+        <div class="lab-scene-layer lab-scene-layer--neon lab-scene-layer--cyber" data-depth="6" data-neon="cyber">
+          <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/03_sign_cyber_clean.png" width="3840" height="2160" alt="" decoding="async">
+        </div>
+        <div class="lab-scene-layer lab-scene-layer--neon lab-scene-layer--punk" data-depth="6" data-neon="punk">
+          <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/04_sign_punk_clean.png" width="3840" height="2160" alt="" decoding="async">
+        </div>
+        <div class="lab-scene-layer lab-scene-layer--neon lab-scene-layer--lab" data-depth="6" data-neon="lab">
+          <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/05_sign_lab_clean.png" width="3840" height="2160" alt="" decoding="async">
+        </div>
+      </div>
+      <div class="lab-scene-layer lab-scene-layer--drones" data-depth="9" data-ambient="drones">
+        <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/06_drones_searchlights.png" width="3840" height="2160" alt="" decoding="async">
+      </div>
+      <div class="lab-scene-layer lab-scene-layer--screen lab-scene-layer--rain" data-depth="10" data-ambient="rain">
+        <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/07_rain_fog_overlay.png" width="3840" height="2160" alt="" decoding="async">
+      </div>
+      <div class="lab-scene-layer lab-scene-layer--screen lab-scene-layer--glow" data-depth="8" data-ambient="glow">
+        <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/09_other_illuminated_signs_overlay.png" width="3840" height="2160" alt="" decoding="async">
+      </div>
+      <div class="lab-scene-layer lab-scene-layer--foreground" data-depth="12">
+        <img class="lab-scene-layer__image" src="/assets/lab/cyberpunk-lab-layered/08_foreground_rooftop_person_clean.png" width="3840" height="2160" alt="" decoding="async">
+      </div>
+    </div>
+  </div>
   <section class="lab-hero" role="img" aria-label="CyberPUNK Lab across a neon city skyline">
     <span class="lab-hero__sr-title">CyberPUNK Lab: Cybersecurity, Privacy, and UNKnown risks</span>
   </section>
@@ -294,6 +326,9 @@
       <p><strong>Cyber<span>PUNK</span> Lab</strong> · Cybersecurity · Privacy · UNKnown risks</p>
       <p>University of Southampton</p>
     </footer>
+    
+      <script src="/assets/lab/lab-home-hero.js?v=1784197988" defer></script>
+    
     <script>
       (() => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

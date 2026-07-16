@@ -11,7 +11,7 @@ layout: compress
     <title>{% if page.title %}{{ page.title }} · {% endif %}CyberPUNK Lab</title>
     <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
     {% if page.lab_page == 'home' %}
-      <link rel="preload" as="image" href="{{ '/assets/lab/homepage-background-title.png' | relative_url }}" fetchpriority="high">
+      <link rel="preload" as="image" href="{{ '/assets/lab/cyberpunk-lab-layered/01_base_clean.png' | relative_url }}" fetchpriority="high">
     {% endif %}
     <script>
       let savedTheme = null;
@@ -47,6 +47,9 @@ layout: compress
       <p><strong>Cyber<span>PUNK</span> Lab</strong> · Cybersecurity · Privacy · UNKnown risks</p>
       <p>University of Southampton</p>
     </footer>
+    {% if page.lab_page == 'home' %}
+      <script src="{{ '/assets/lab/lab-home-hero.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+    {% endif %}
     <script>
       (() => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

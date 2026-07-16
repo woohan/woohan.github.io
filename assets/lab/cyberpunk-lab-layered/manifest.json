@@ -1,0 +1,92 @@
+{
+  "schema": "cyberpunk-lab-layer-manifest/v1",
+  "coordinate_system": {
+    "canvas_4k": [
+      3840,
+      2160
+    ],
+    "original": [
+      1586,
+      992
+    ],
+    "original_offset_4k": [
+      334,
+      88
+    ],
+    "source_scale": 2
+  },
+  "text_invariants": {
+    "source_pixels_only": true,
+    "strings": [
+      "Cyber",
+      "PUNK",
+      "Lab"
+    ],
+    "regenerated_text": false
+  },
+  "stack_bottom_to_top": [
+    {
+      "file": "01_base_extended_building_removed.png",
+      "role": "base",
+      "blend": "normal",
+      "animation": "slow scale/translate, max suggested parallax 12px"
+    },
+    {
+      "file": "02_building_structure.png",
+      "role": "left building",
+      "blend": "normal",
+      "animation": "subtle 2-5px parallax"
+    },
+    {
+      "file": "03_sign_cyber.png",
+      "role": "exact source neon Cyber",
+      "blend": "normal or screen",
+      "animation": "opacity flicker + drop-shadow pulse"
+    },
+    {
+      "file": "04_sign_punk.png",
+      "role": "exact source neon PUNK",
+      "blend": "normal or screen",
+      "animation": "independent red flicker"
+    },
+    {
+      "file": "05_sign_lab.png",
+      "role": "exact source neon Lab",
+      "blend": "normal or screen",
+      "animation": "slow blue breathing"
+    },
+    {
+      "file": "06_drones_searchlights.png",
+      "role": "finely traced drone bodies plus clean translucent searchlight cones",
+      "blend": "normal",
+      "animation": "small horizontal drift; opacity 0.65-1"
+    },
+    {
+      "file": "07_rain_fog_overlay.png",
+      "role": "clean procedural atmosphere with no copied city fragments",
+      "blend": "screen",
+      "animation": "translateY 10-24px; opacity 0.2-0.55"
+    },
+    {
+      "file": "09_other_illuminated_signs_overlay.png",
+      "role": "illuminated pixels and compact glow only; signs remain in base",
+      "blend": "screen",
+      "animation": "low-opacity asynchronous pulse"
+    },
+    {
+      "file": "08_foreground_rooftop_person.png",
+      "role": "foreground/parallax",
+      "blend": "normal",
+      "animation": "closest layer, 4-10px parallax"
+    }
+  ],
+  "notes": [
+    "Every PNG layer is 3840x2160 and uses the same origin; do not crop individual assets.",
+    "preview_extended_exact.png is the canonical 4K visual preview and contains the complete original at exact 2x scale, offset 334,88.",
+    "Before final 2x upscaling, the embedded 1586x992 original is verified pixel-exact at logical offset 167,44.",
+    "The outer border is content-aware outpainting that continues the buildings, pipes, sky, rain and rooftop; the protected center is the unchanged original.",
+    "The base's removed-building fill is intended for modest parallax and neon-off states; large reveals may require artist-directed inpainting.",
+    "Other illuminated signs are provided as optional effect overlays and intentionally remain visible in the base scene.",
+    "Transparent mattes were checked on both black and white backgrounds; see edge_qa_sheet.png and edge_qa_drones.png."
+  ]
+}
