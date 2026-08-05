@@ -10,7 +10,8 @@ description: "Meet the researchers of CyberPUNK Lab."
   {% include lab/page-header.html icon="/assets/lab/icons/team.svg" description="We work across cybersecurity, privacy engineering, dependable machine learning, and emerging risks in AI." %}
 
   {% assign lead = site.data.lab.team.lead %}
-  <section class="lab-lead" id="person-{{ lead.id }}" aria-labelledby="lab-lead-title">
+  <section class="lab-lead lab-lead--card lab-publications-cat-host lab-subpage-cat-host lab-subpage-cat-host--compact lab-subpage-cat-stage lab-subpage-cat-stage--compact" id="person-{{ lead.id }}" aria-labelledby="lab-lead-title">
+    {% include lab/cyber-cat.html %}
     <h2 id="lab-lead-title" class="lab-section-title">Lab Lead / PI</h2>
     {% if lead.profile_url %}
       <a class="lab-avatar-link" href="{{ lead.profile_url }}" target="_blank" rel="noopener" aria-label="{{ lead.name }} profile">

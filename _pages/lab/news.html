@@ -9,10 +9,11 @@ description: "Latest updates, announcements, and highlights from CyberPUNK Lab."
 <div class="lab-subpage">
   {% include lab/page-header.html icon="/assets/lab/icons/news.svg" description="Latest updates, announcements, and highlights from CyberPUNK Lab." %}
 
-  <section class="lab-news-list" aria-label="Lab news">
+  <section class="lab-news-list lab-subpage-cat-stage lab-subpage-cat-stage--compact" aria-label="Lab news">
     {% assign visible_news = site.data.lab.news | where_exp: "item", "item.date >= '2025-01'" %}
     {% for item in visible_news %}
-      <article class="lab-news-row" id="news-{{ item.id }}">
+      <article class="lab-news-row{% if forloop.first %} lab-publications-cat-host lab-subpage-cat-host lab-subpage-cat-host--compact{% endif %}" id="news-{{ item.id }}">
+        {% if forloop.first %}{% include lab/cyber-cat.html %}{% endif %}
         <time datetime="{{ item.date }}">
           <strong>{{ item.month }}</strong>
           <span>{{ item.date | slice: 0, 4 }}</span>

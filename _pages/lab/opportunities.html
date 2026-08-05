@@ -9,9 +9,10 @@ description: "PhD, visiting, internship, and collaboration opportunities at Cybe
 <div class="lab-subpage">
   {% include lab/page-header.html icon="/assets/lab/icons/opportunities.svg" description="Work with us on secure, private, and dependable AI systems." %}
 
-  <section class="lab-opportunity-grid" aria-label="Current opportunities">
+  <section class="lab-opportunity-grid lab-subpage-cat-stage" aria-label="Current opportunities">
     {% for item in site.data.lab.opportunities %}
-      <article class="lab-opportunity-card" id="opportunity-{{ item.id }}">
+      <article class="lab-opportunity-card{% if forloop.first %} lab-publications-cat-host lab-subpage-cat-host{% endif %}" id="opportunity-{{ item.id }}">
+        {% if forloop.first %}{% include lab/cyber-cat.html %}{% endif %}
         <div class="lab-opportunity-card__topline">
           <span>{{ item.type }}</span>
           <strong>{{ item.status }}</strong>

@@ -50,6 +50,7 @@ layout: compress
     {% if page.lab_page == 'home' %}
       <script src="{{ '/assets/lab/lab-home-hero.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
     {% endif %}
+    <script src="{{ '/assets/lab/cyber-cat.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
     <script>
       (() => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

@@ -1137,6 +1137,197 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
   line-height: 1.45;
 }
 
+.lab-site .lab-publications-cat-host {
+  position: relative;
+  overflow: visible;
+  contain: layout style;
+}
+
+.lab-site .lab-publications-cat {
+  position: absolute;
+  top: 0;
+  right: 1.5%;
+  z-index: 8;
+  width: 46%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  pointer-events: none;
+  transform: translateY(-74%);
+  user-select: none;
+}
+
+.lab-site .lab-subpage-cat-stage {
+  margin-top: clamp(6.5rem, 11vw, 8rem);
+}
+
+.lab-site .lab-subpage-cat-stage--compact {
+  margin-top: clamp(4.5rem, 7vw, 5rem);
+}
+
+.lab-site .lab-subpage-cat-host > .lab-publications-cat {
+  right: clamp(0.5rem, 3vw, 2rem);
+  width: min(42%, 245px);
+  transform: translateY(-74%);
+}
+
+.lab-site .lab-subpage-cat-host--compact > .lab-publications-cat {
+  width: min(21%, 122.5px);
+}
+
+.lab-site .lab-publications-cat__art {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lab-site .lab-publications-cat__head,
+.lab-site .lab-publications-cat__ear,
+.lab-site .lab-publications-cat__tail,
+.lab-site .lab-publications-cat__dangling-paw,
+.lab-site .lab-publications-cat__pupil,
+.lab-site .lab-publications-cat__lid {
+  transform-box: fill-box;
+  will-change: transform;
+}
+
+.lab-site .lab-publications-cat__head {
+  transform-origin: 50% 82%;
+}
+
+.lab-site .lab-publications-cat__ear--left {
+  transform-origin: 78% 100%;
+  animation: lab-publications-cat-ear-left 6.4s ease-in-out infinite;
+}
+
+.lab-site .lab-publications-cat__ear--right {
+  transform-origin: 22% 100%;
+  animation: lab-publications-cat-ear-right 5.3s 0.75s ease-in-out infinite;
+}
+
+.lab-site .lab-publications-cat__tail {
+  transform-origin: 9% 20%;
+  animation: lab-publications-cat-tail 3.15s ease-in-out infinite;
+}
+
+.lab-site .lab-publications-cat__dangling-paw {
+  transform-origin: 50% 4%;
+  animation: lab-publications-cat-paw 4.2s ease-in-out infinite;
+}
+
+.lab-site .lab-publications-cat__pupil {
+  transform-origin: center;
+}
+
+.lab-site .lab-publications-cat__lid {
+  transform-origin: center;
+  transform: scaleY(0);
+}
+
+.lab-site .lab-publications-cat.is-blinking .lab-publications-cat__lid {
+  animation: lab-publications-cat-blink 190ms ease-in-out 1;
+}
+
+.lab-site .lab-publications-cat__rim {
+  fill: none;
+  opacity: 0.76;
+  filter: url(#lab-cat-edge-glow);
+  animation: lab-publications-cat-edge-light 3.8s ease-in-out infinite;
+}
+
+.lab-site .lab-publications-cat__rim--cool {
+  stroke: #58dcf5;
+}
+
+.lab-site .lab-publications-cat__rim--warm {
+  stroke: #ff5b8d;
+}
+
+@keyframes lab-publications-cat-tail {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes lab-publications-cat-paw {
+  0%,
+  100% {
+    transform: rotate(-0.8deg);
+  }
+
+  50% {
+    transform: translateY(2px) rotate(1.2deg);
+  }
+}
+
+@keyframes lab-publications-cat-ear-left {
+  0%,
+  84%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  88% {
+    transform: rotate(-8deg);
+  }
+
+  92% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes lab-publications-cat-ear-right {
+  0%,
+  78%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  82% {
+    transform: rotate(9deg);
+  }
+
+  87% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes lab-publications-cat-blink {
+  0%,
+  100% {
+    transform: scaleY(0);
+  }
+
+  45%,
+  62% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes lab-publications-cat-edge-light {
+  0%,
+  100% {
+    opacity: 0.58;
+  }
+
+  50% {
+    opacity: 0.82;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-site .lab-publications-cat__ear,
+  .lab-site .lab-publications-cat__tail,
+  .lab-site .lab-publications-cat__dangling-paw,
+  .lab-site .lab-publications-cat__rim {
+    animation: none;
+  }
+}
+
 .lab-site .lab-news-list {
   display: grid;
   gap: 0.8rem;
@@ -1262,6 +1453,24 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
   max-width: 720px;
   margin: 0 auto 4rem;
   text-align: center;
+}
+
+.lab-site .lab-lead.lab-subpage-cat-stage {
+  margin-top: clamp(9.5rem, 16vw, 11rem);
+}
+
+.lab-site .lab-lead.lab-subpage-cat-stage--compact {
+  margin-top: clamp(5.5rem, 9vw, 6.5rem);
+}
+
+.lab-site .lab-lead--card,
+.lab-site .lab-about-intro--card {
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  background: #fff;
+  border: 1px solid var(--lab-line);
+  border-top: 3px solid var(--lab-pink);
+  border-radius: 0.55rem;
+  box-shadow: 0 8px 24px rgba(18, 29, 50, 0.045);
 }
 
 .lab-site .lab-avatar {
@@ -2151,6 +2360,10 @@ html.lab-has-visited .lab-site .lab-nav a.is-active::after {
     padding-top: 2.5rem;
   }
 
+  .lab-site .lab-screen--publications.lab-publications-cat-host {
+    margin-top: 22%;
+  }
+
   .lab-site .lab-page-heading {
     grid-template-columns: 2.85rem minmax(0, 1fr);
     gap: 0.75rem;
@@ -2846,7 +3059,9 @@ html[data-lab-theme="dark"] .lab-site .lab-news-row,
 html[data-lab-theme="dark"] .lab-site .lab-person-card,
 html[data-lab-theme="dark"] .lab-site .lab-publication-row,
 html[data-lab-theme="dark"] .lab-site .lab-opportunity-card,
-html[data-lab-theme="dark"] .lab-site .lab-name-meaning article {
+html[data-lab-theme="dark"] .lab-site .lab-name-meaning article,
+html[data-lab-theme="dark"] .lab-site .lab-lead--card,
+html[data-lab-theme="dark"] .lab-site .lab-about-intro--card {
   background: #1f2125;
   border-color: var(--lab-line);
   border-top-color: var(--lab-pink);

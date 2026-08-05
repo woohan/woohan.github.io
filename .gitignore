@@ -1,2 +1,14 @@
 .bundle/
 vendor/bundle/
+
+# Generated Jekyll output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Unused local cat concept renders
+assets/lab/cyber-cat/
