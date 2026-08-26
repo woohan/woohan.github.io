@@ -24,6 +24,14 @@ News
 
 <section class="news-list">
   <article class="news-card">
+    <time class="news-date">2026-08</time>
+    <p>🎉 Our paper <em>"Revisit Location Privacy Protection: A Service Failure Perspective"</em>, a collaboration with Guangzhou University, was accepted to <a href="https://www.sigsac.org/ccs/CCS2026/index.html" target="_blank"><strong>ACM CCS 2026</strong></a>. Congrats to all co-authors!</p>
+  </article>
+  <article class="news-card">
+    <time class="news-date">2026-08</time>
+    <p>🎉 My PhD student Jiawei Wang received a Participation Scholarship to attend <a href="https://womencourage.acm.org/2026/" target="_blank">ACM-W Europe womENcourage 2026</a>. Congratulations!</p>
+  </article>
+  <article class="news-card">
     <time class="news-date">2026-06</time>
     <p>🏅 I was selected as a <strong>Gold Reviewer for ICML 2026</strong>.</p>
   </article>

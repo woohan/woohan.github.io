@@ -123,10 +123,20 @@ class LabSiteTest < Minitest::Test
     news = data("_data/lab/news.yml")
 
     assert news.all? { |item| item.key?("month") && item.key?("venue_short") && item.key?("body_html") && item.key?("image") }
-    assert_equal "Apr", news.first.fetch("month")
-    assert_equal "ICML", news.first.fetch("venue_short")
-    assert_includes news.first.fetch("body_html"), "SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"
-    assert_includes news[1].fetch("body_html"), "https://doi.org/10.1109/TR.2026.3687124"
+    womencourage = news.find { |item| item.fetch("id") == "jiawei-wang-womencourage-2026-scholarship" }
+    slaclip = news.find { |item| item.fetch("id") == "slaclip-icml-2026" }
+    reliability = news.find { |item| item.fetch("id") == "adaptive-mini-batching-ieee-tr-2026" }
+    assert_equal "Aug", womencourage.fetch("month")
+    assert_equal "womENcourage", womencourage.fetch("venue_short")
+    assert_includes womencourage.fetch("body_html"), "womENcourage 2026 Participation Scholarship"
+    assert_includes womencourage.fetch("body_html"), "https://womencourage.acm.org/2026/"
+    refute_includes womencourage.fetch("body_html"), "get-a-scholarship"
+    ccs = news.find { |item| item.fetch("id") == "location-privacy-service-failure-ccs-2026" }
+    assert_includes ccs.fetch("body_html"), "Revisit Location Privacy Protection: A Service Failure Perspective"
+    assert_includes ccs.fetch("body_html"), "https://www.sigsac.org/ccs/CCS2026/index.html"
+    assert_equal "/assets/lab/news/CCS-logo.png", ccs.fetch("image")
+    assert_includes slaclip.fetch("body_html"), "SlaClip: Gradient Norm Slacks can be Indicator for Adaptive Clipping in DP-SGD"
+    assert_includes reliability.fetch("body_html"), "https://doi.org/10.1109/TR.2026.3687124"
     assert news.all? { |item| !item.fetch("body_html").include?("My ") && !item.fetch("body_html").include?("I was") }
 
     fedevolve = news.find { |item| item.fetch("title").start_with?("FedEvolve") }
@@ -504,14 +514,14 @@ class LabSiteTest < Minitest::Test
 
     news_article = homepage.match(/<article class="lab-screen lab-screen--news">.*?<\/article>/m).to_s
 
-    assert_equal "One paper accepted to ICML 2026 as Spotlight (top 2.2%)!",
+    assert_equal "One paper accepted at ACM CCS 2026.",
                  news.first.fetch("home_title")
     assert_equal [
+      "One paper accepted at ACM CCS 2026.",
+      "🎉 Jiawei Wang awarded a womENcourage 2026 Participation Scholarship.",
       "One paper accepted to ICML 2026 as Spotlight (top 2.2%)!",
       "One paper accepted by IEEE Transactions on Reliability.",
-      "One paper accepted at EuroMLSys 2026.",
-      "Hengyang Yao joined CyberPUNK Lab as a PhD student.",
-      "One paper accepted at the RSD Workshop @ AAAI 2026."
+      "One paper accepted at EuroMLSys 2026."
     ], news.take(5).map { |item| item.fetch("home_title") }
     assert news.take(5).all? { |item| item.fetch("home_title").length <= 80 },
            "Homepage news titles should stay concise"
