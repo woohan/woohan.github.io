@@ -1,13 +1,14 @@
 {% assign publications_by_year = include.publications | group_by: "year" %}
+{% assign show_cat = include.show_cat | default: false %}
 {% assign first_publication = true %}
 <div class="lab-publication-years">
   {% for year in publications_by_year %}
     <section class="lab-publication-year" aria-labelledby="publication-year-{{ year.name }}">
       <h2 id="publication-year-{{ year.name }}">{{ year.name }}</h2>
-      <div class="lab-publication-list{% if first_publication %} lab-subpage-cat-stage lab-subpage-cat-stage--compact{% endif %}">
+      <div class="lab-publication-list{% if show_cat and first_publication %} lab-subpage-cat-stage lab-subpage-cat-stage--compact{% endif %}">
         {% for item in year.items %}
-          <article class="lab-publication-row{% if first_publication %} lab-publications-cat-host lab-subpage-cat-host lab-subpage-cat-host--compact{% endif %}" id="publication-{{ item.id }}">
-            {% if first_publication %}{% include lab/cyber-cat.html %}{% endif %}
+          <article class="lab-publication-row{% if show_cat and first_publication %} lab-publications-cat-host lab-subpage-cat-host lab-subpage-cat-host--compact{% endif %}" id="publication-{{ item.id }}">
+            {% if show_cat and first_publication %}{% include lab/cyber-cat.html %}{% endif %}
             <div class="lab-publication-row__content">
               <h3>{{ item.title }}</h3>
               <p>{{ item.authors }}</p>

@@ -10,5 +10,5 @@ description: "Selected publications from CyberPUNK Lab."
   {% include lab/page-header.html icon="/assets/lab/icons/publication.svg" description="Selected publications in cybersecurity, privacy, dependable systems, and trustworthy AI." %}
 
   {% assign visible_publications = site.data.lab.publications | where_exp: "item", "item.year >= 2025" %}
-  {% include lab/publication-list.html publications=visible_publications %}
+  {% include lab/publication-list.html publications=visible_publications show_cat=true %}
 </div>
