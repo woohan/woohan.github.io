@@ -12,7 +12,7 @@
   image_position: "center"
   links:
     pdf: "https://openreview.net/pdf?id=48suUeYKdb"
-    project: "https://openreview.net/forum?id=48suUeYKdb&noteId=QbtjjzaCwt"
+    project: "https://github.com/ZsyRock/SlaClip"
 
 - id: "adaptive-mini-batching-ieee-tr-2026"
   year: 2026
