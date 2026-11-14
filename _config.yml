@@ -248,6 +248,16 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # lab/ccs2026 (unlisted standalone page)
+  - scope:
+      path: "lab/ccs2026"
+    values:
+      sitemap: false
+  # lab/ccs26 (redirect to lab/ccs2026)
+  - scope:
+      path: "lab/ccs26"
+    values:
+      sitemap: false
 
 # Sass/SCSS
 sass:

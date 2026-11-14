@@ -15,3 +15,12 @@
 - Page-level navigation such as “More” may link to the top of a destination page.
 - Preserve existing IDs when editing titles or dates so inbound deep links remain stable.
 - After changing Lab content or links, run `bundle exec ruby scripts/check_lab_deep_links.rb` against a current `_site` build.
+
+## 同步 ccs2026 页面
+
+- 页面来源：artifact https://claude.ai/artifact/Wr7nEWZiQdGKwWJzwUPQmj，用 Artifact 工具读取其中的 `index.html`。
+- 原样保留内容，只做两处改动：在 `<head>` 内（第 1 行 `</head>` 前）加 `<meta name="robots" content="noindex, nofollow">`；删除 `<meta name="claude:viewport-fit-sides" content="cover">` 整行。
+- 写入 `lab/ccs2026/index.html`（无 front matter，Jekyll 原样拷贝）；`lab/ccs26/index.html` 是指向它的跳转页，一般不用动。
+- `_config.yml` 的 `defaults` 里已有两条 `sitemap: false`（`lab/ccs2026`、`lab/ccs26`），不要删。
+- 本地 `./scripts/serve-local.sh` 预览确认后，commit 并 push 到 master（需 Han 明确同意），GitHub Pages 自动构建。
+- 以后 Han 说“同步 ccs2026 页面”即执行以上步骤。
