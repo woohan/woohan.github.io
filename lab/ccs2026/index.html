@@ -523,7 +523,7 @@
   } catch (e) {}
   function isStar(id) { return stars[id] === 1 || (stars[id] === undefined && DEFAULT[id] === 1); }
   function starCount() { var n = 0; PROG.papers.forEach(function (p) { if (isStar(p.id)) n++; }); return n; }
-  var st = { day: 0, scope: 'all', q: '', track: '', tag: '' };
+  var st = { day: 0, scope: 'all', q: '', track: [], tag: [] };
   var qre = null, qWords = [], qPerson = false;
   function setQ(q) {
     st.q = q.trim();
@@ -546,15 +546,16 @@
   var OPEN = {};
   function resetOpen() { OPEN = {}; }
   function isOpen(k, auto) { return OPEN[k] === undefined ? auto : OPEN[k]; }
-  function nFilt() { return (st.day ? 1 : 0) + (st.track ? 1 : 0) + (st.tag ? 1 : 0); }
+  function nFilt() { return (st.day ? 1 : 0) + st.track.length + st.tag.length; }
+  function tog(a, v) { return a.indexOf(v) < 0 ? a.concat([v]) : a.filter(function (x) { return x !== v; }); }
   function chips() {
     var sc = starCount(), nf = nFilt(), fb = $('btn-filt');
     $('chips-scope').innerHTML = chip('scope', 'all', T('all'), st.scope === 'all') + chip('scope', 'star', T('mine') + (sc ? ' <b class="cnt">' + sc + '</b>' : ''), st.scope === 'star') +
       (findNow().inConf ? '<button type="button" class="chip now" id="btn-now">' + T('now') + '</button>' : '');
     $('chips-day').innerHTML = T('days').slice(1).map(function (x) { return chip('day', x[0], x[1], st.day === x[0]); }).join('');
     var tr = {}; PROG.sessions.forEach(function (s) { tr[s.track] = 1; });
-    $('chips-track').innerHTML = Object.keys(TRACK.zh).filter(function (k) { return tr[k]; }).map(function (k) { return chip('track', k, trackL(k), st.track === k); }).join('');
-    $('chips-tag').innerHTML = TAGS.map(function (t) { return chip('tag', t[0], tagL(t[0]), st.tag === t[0]); }).join('');
+    $('chips-track').innerHTML = Object.keys(TRACK.zh).filter(function (k) { return tr[k]; }).map(function (k) { return chip('track', k, trackL(k), st.track.indexOf(k) >= 0); }).join('');
+    $('chips-tag').innerHTML = TAGS.map(function (t) { return chip('tag', t[0], tagL(t[0]), st.tag.indexOf(t[0]) >= 0); }).join('');
     fb.innerHTML = T('filtBtn') + (nf ? ' <b class="cnt">' + nf + '</b>' : '');
     fb.classList.toggle('on', nf > 0);
   }
@@ -562,8 +563,8 @@
     var s = S[p.s];
     if (st.day && s.day !== st.day) return false;
     if (st.scope === 'star' && !isStar(p.id) && !ghost[p.id]) return false;
-    if (st.track && s.track !== st.track) return false;
-    if (st.tag && p.tags.indexOf(st.tag) < 0) return false;
+    if (st.track.length && st.track.indexOf(s.track) < 0) return false;
+    if (st.tag.length && !st.tag.some(function (g) { return p.tags.indexOf(g) >= 0; })) return false;
     if (st.q && !qMatch(p)) return false;
     return true;
   }
@@ -597,7 +598,7 @@
   function paperHTML(p, expand) {
     var s = S[p.s], key = isKey(s);
     var who = p.au.map(authorHTML).join(lang === 'zh' ? '；' : '; ');
-    var tags = p.tags.map(function (k) { return '<button type="button" class="tg' + (st.tag === k ? ' on' : '') + '" data-tag="' + k + '">' + tagL(k) + '</button>'; }).join('');
+    var tags = p.tags.map(function (k) { return '<button type="button" class="tg' + (st.tag.indexOf(k) >= 0 ? ' on' : '') + '" data-tag="' + k + '">' + tagL(k) + '</button>'; }).join('');
     var k = 'p:' + p.id, sum = (lang === 'en' && p.sumEn) || p.sum;
     return '<details class="paper' + (key ? ' key' : '') + '" data-k="' + esc(k) + '"' + (isOpen(k, expand) ? ' open' : '') + '><summary>' +
       '<span class="when">' + (key ? s.start + '–' + s.end : T('approx') + p.at) + '</span>' +
@@ -676,7 +677,7 @@
   function render() {
     var by = {}, n = 0, hit = [];
     PROG.papers.forEach(function (p) { if (match(p)) { (by[p.s] = by[p.s] || []).push(p); hit.push(p); n++; } });
-    var narrowed = !!(st.scope !== 'all' || st.track || st.tag || st.q);
+    var narrowed = !!(st.scope !== 'all' || st.track.length || st.tag.length || st.q);
     var autoExp = narrowed && n <= 8;
     var h = '', agenda = st.scope === 'star';
     if (agenda) {
@@ -722,7 +723,7 @@
     L.innerHTML = h;
     L.classList.remove('swap'); void L.offsetWidth; L.classList.add('swap');
     var filtered = sig() !== EMPTY;
-    var names = [st.day ? T('days')[st.day - 15][1] : '', st.track ? trackL(st.track) : '', st.tag ? tagL(st.tag) : '', st.q ? '“' + esc(st.q) + '”' : ''].filter(Boolean).join(' + ');
+    var names = [st.day ? T('days')[st.day - 15][1] : '', st.track.map(trackL).join(' / '), st.tag.map(tagL).join(' / '), st.q ? '“' + esc(st.q) + '”' : ''].filter(Boolean).join(' + ');
     $('countbar').hidden = !filtered;
     $('btn-clear-p').hidden = !filtered;
     $('count').innerHTML = T('matched')(n) + (names ? '<span class="what">' + names + '</span>' : '');
@@ -793,7 +794,7 @@
      jump : 从日程点进论文卡片前的完整状态，点返回条或系统返回时恢复 */
   function copy(o) { var r = {}; for (var k in o) r[k] = o[k]; return r; }
   var EMPTY = '0|||';
-  function sig() { return [st.day, st.track, st.tag, st.q].join('|'); }
+  function sig() { return [st.day, st.track.slice().sort().join(','), st.tag.slice().sort().join(','), st.q].join('|'); }
   function snapView() { return { sig: sig(), open: copy(OPEN), y: window.scrollY }; }
   var views = {}, base = {}, jump = null;
   try { history.scrollRestoration = 'manual'; } catch (e) {}
@@ -854,7 +855,7 @@
     views.star = snapView();
     jump = { st: copy(st), q: $('q').value, open: copy(OPEN), y: window.scrollY, now: nowSlot, base: base.star };
     var keep = views.all && views.all.sig === EMPTY ? copy(views.all.open) : {};
-    st = { day: 0, scope: 'all', q: '', track: '', tag: '' }; $('q').value = ''; setQ('');
+    st = { day: 0, scope: 'all', q: '', track: [], tag: [] }; $('q').value = ''; setQ('');
     OPEN = keep; OPEN['slot:' + s.day + ' ' + s.start] = true; OPEN['sess:' + s.code] = true; OPEN['p:' + id] = true;
     delete base.all;
     chips(); render(); showBar();
@@ -919,10 +920,10 @@
     if (t.closest('summary')) e.preventDefault();
     if (t.dataset.day !== undefined) { var d = +t.dataset.day; applyFilter(function () { st.day = st.day === d ? 0 : d; }); }
     else if (t.dataset.scope) switchScope(t.dataset.scope);
-    else if (t.dataset.track) { var tr = t.dataset.track; applyFilter(function () { st.track = st.track === tr ? '' : tr; }); }
-    else if (t.dataset.tag) { var tg = t.dataset.tag; applyFilter(function () { st.tag = st.tag === tg ? '' : tg; }); }
+    else if (t.dataset.track) { var tr = t.dataset.track; applyFilter(function () { st.track = tog(st.track, tr); }); }
+    else if (t.dataset.tag) { var tg = t.dataset.tag; applyFilter(function () { st.tag = tog(st.tag, tg); }); }
     else if (t.id === 'btn-filt' || t.id === 'btn-done') { var f = $('filt'); f.hidden = t.id === 'btn-done' ? true : !f.hidden; $('btn-filt').setAttribute('aria-expanded', !f.hidden); setTopH(); }
-    else if (t.id === 'btn-clear' || t.id === 'btn-clear-p') { applyFilter(function () { st.day = 0; st.track = ''; st.tag = ''; setQ(''); $('q').value = ''; }); }
+    else if (t.id === 'btn-clear' || t.id === 'btn-clear-p') { applyFilter(function () { st.day = 0; st.track = []; st.tag = []; setQ(''); $('q').value = ''; }); }
     else if (t.dataset.star) {
       var id = t.dataset.star, was = isStar(id), ui = undo.indexOf(id);
       setStar(id, !was);
@@ -939,7 +940,7 @@
       undo.forEach(function (x) { setStar(x, true); }); undo = []; showToast(); chips();
       if (st.scope === 'star') render(); else { paintStars(); starMarks(); }
     }
-    else if (t.id === 'btn-now') { jump = null; base = {}; views = {}; ghost = {}; nowSlot = findNow().tgt; st.day = 0; st.scope = 'all'; st.track = ''; st.tag = ''; setQ(''); $('q').value = ''; resetOpen(); chips(); render(); showBar(); scrollToNow(true); }
+    else if (t.id === 'btn-now') { jump = null; base = {}; views = {}; ghost = {}; nowSlot = findNow().tgt; st.day = 0; st.scope = 'all'; st.track = []; st.tag = []; setQ(''); $('q').value = ''; resetOpen(); chips(); render(); showBar(); scrollToNow(true); }
     else if (t.id === 'btn-lang') { lang = lang === 'zh' ? 'en' : 'zh'; try { localStorage.setItem('ccs26-public-lang', lang); } catch (err) {} applyLang(false); }
     else if (t.id === 'btn-back') goBack(false);
   });
