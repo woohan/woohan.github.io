@@ -785,6 +785,32 @@
   setInterval(markNow, 30000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) markNow(); });
   document.addEventListener('toggle', function (e) { var d = e.target; if (d && d.dataset && d.dataset.k) OPEN[d.dataset.k] = d.open; }, true);
+  /* 卡片展开 / 收起的过渡：只处理用户点击 summary；渲染和跳转时的批量展开不动画。
+     收起时先播完高度动画再去掉 open，toggle 事件照常更新 OPEN */
+  var RM = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  function fold(d, open) {
+    var h0 = d.getBoundingClientRect().height, cs, h1, an = [], i;
+    if (d._a) d._a(true);
+    d._to = open; OPEN[d.dataset.k] = open;
+    if (open) d.open = true;
+    d.style.overflow = 'hidden';
+    cs = getComputedStyle(d);
+    h1 = open ? d.getBoundingClientRect().height : d.firstElementChild.getBoundingClientRect().height + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth) + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+    var o = { duration: 200, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' };
+    an.push(d.animate([{ height: h0 + 'px' }, { height: h1 + 'px' }], o));
+    for (i = 1; i < d.children.length; i++) an.push(d.children[i].animate([{ opacity: open ? 0 : 1 }, { opacity: open ? 1 : 0 }], o));
+    d._a = function (cut) {
+      an[0].onfinish = null; d._a = null;
+      if (!cut && !open) d.open = false;
+      d.style.overflow = ''; an.forEach(function (x) { x.cancel(); });
+    };
+    an[0].onfinish = function () { if (d._a) d._a(false); };
+  }
+  document.addEventListener('click', function (e) {
+    var sm = e.target.closest && e.target.closest('summary'), d = sm && sm.parentNode;
+    if (e.defaultPrevented || !d || d.tagName !== 'DETAILS' || !d.dataset.k || sm !== d.firstElementChild || e.target.closest('a,button,[data-goto]') || !d.animate || (RM && RM.matches)) return;
+    e.preventDefault(); fold(d, d._a ? !d._to : !d.open);
+  });
 
   function setTopH() { var t = document.querySelector('.top'); if (t && t.offsetHeight) document.documentElement.style.setProperty('--top-h', t.offsetHeight + 'px'); }
 
