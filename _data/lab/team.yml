@@ -28,6 +28,13 @@ phd_students:
     avatar: "/images/Hengyang_2026.jpg"
     initials: "HY"
     research: "Causal Inference, Privacy, Federated Learning."
+  - id: "adethya-srinivasan"
+    name: "Adethya Srinivasan"
+    role: "PhD Starting from Jan 2027"
+    avatar: "/images/Adethya_2026.jpg"
+    profile_url: "https://adets-terminal.co.uk/"
+    initials: "AS"
+    research: "Linux Kernel Fuzzing, AI Security, Binary Exploitation, Stateful Fuzzing, AI-assisted Fuzzing."
 
 research_assistants: []
 

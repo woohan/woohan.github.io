@@ -56,12 +56,12 @@ class LabSiteTest < Minitest::Test
     end
   end
 
-  def test_team_contains_han_wu_and_all_three_phd_students
+  def test_team_contains_han_wu_and_all_phd_students
     team = data("_data/lab/team.yml")
 
     assert_equal "Dr Han Wu", team.fetch("lead").fetch("name")
     assert_equal "/images/Han_2026.jpg", team.fetch("lead").fetch("avatar")
-    assert_equal ["Shuyan Zou", "Jiawei Wang", "Hengyang Yao"],
+    assert_equal ["Shuyan Zou", "Jiawei Wang", "Hengyang Yao", "Adethya Srinivasan"],
                  team.fetch("phd_students").map { |person| person.fetch("name") }
   end
 

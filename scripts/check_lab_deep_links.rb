@@ -54,7 +54,7 @@ home = Nokogiri::HTML(File.read(SITE.join("lab/index.html")))
 link_groups = {
   ".lab-home-news" => 5,
   ".lab-home-publication > a" => 5,
-  ".lab-name-list > a" => 4,
+  ".lab-name-list > a" => 5,
   ".lab-home-opening" => 1
 }
 links = link_groups.flat_map do |selector, expected_count|
